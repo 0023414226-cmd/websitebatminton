@@ -8,12 +8,12 @@
  * Generate slug from string
  */
 function slug($string) {
-    $string = preg_replace('/[áàảãạăằẳẵắặâầẩẫấậ]/u', 'a', $string);
-    $string = preg_replace('/[éèẻẽẹêềểễếệ]/u', 'e', $string);
-    $string = preg_replace('/[íìỉĩị]/u', 'i', $string);
-    $string = preg_replace('/[óòỏõọôồổỗốộơờởỡớợ]/u', 'o', $string);
-    $string = preg_replace('/[úùủũụưừửữứự]/u', 'u', $string);
-    $string = preg_replace('/[ýỳỷỹỵ]/u', 'y', $string);
+    $string = preg_replace('/[hihi]/u', 'a', $string);
+    $string = preg_replace('/[hihi]/u', 'e', $string);
+    $string = preg_replace('/[hihi]/u', 'i', $string);
+    $string = preg_replace('/[hihi]/u', 'o', $string);
+    $string = preg_replace('/[hihi]/u', 'u', $string);
+    $string = preg_replace('/[hihi]/u', 'y', $string);
     $string = preg_replace('/đ/u', 'd', $string);
     $string = strtolower($string);
     $string = preg_replace('/[^a-z0-9\s-]/u', '', $string);

@@ -30,7 +30,7 @@ class Category extends Model {
                "FROM {$this->table} c " .
                "" .
                "WHERE c.status = 'active' " .
-               "ORDER BY c.name ASC, b.name ASC";
+               "ORDER BY c.name ASC";
 
         $rows = $this->db->fetchAll($sql);
         $menu = [];
@@ -46,12 +46,7 @@ class Category extends Model {
                 ];
             }
 
-            if (!empty($row['brand_id'])) {
-                $menu[$categoryId]['brands'][] = [
-                    'id' => $row['brand_id'],
-                    'name' => $row['brand_name']
-                ];
-            }
+            
         }
 
         return $menu;
@@ -128,4 +123,3 @@ class Category extends Model {
         return $this->update($id, ['status' => $status]);
     }
 }
-
