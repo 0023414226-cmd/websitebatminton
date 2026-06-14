@@ -15,7 +15,7 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <!-- Custom JS -->
-    <script src="/websitebatminton/assets/js/admin.js"></script>
+    <script src="/assets/js/admin.js"></script>
     
     <script>
         // Auto-hide alerts after 5 seconds

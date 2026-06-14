@@ -15,7 +15,7 @@
             <?php endif; ?>
         <?php endif; ?>
 
-        <form method="POST" action="/websitebatminton/login">
+        <form method="POST" action="/login">
             <div class="mb-3">
                 <label class="form-label">Email</label>
                 <input type="email" name="email" class="form-control" placeholder="Email" required>
@@ -32,7 +32,7 @@
         </form>
 
         <div class="auth-links">
-            <a href="/websitebatminton/register">Khách hàng mới? Tạo tài khoản</a><br>
+            <a href="/register">Khách hàng mới? Tạo tài khoản</a><br>
             <a href="#">Quên mật khẩu? Khôi phục mật khẩu</a>
         </div>
     </div>

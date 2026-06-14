@@ -64,11 +64,11 @@ class BrandController extends AdminBaseController {
      */
     public function store() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/brands');
+            $this->redirect('/admin/brands');
         }
 
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/brands/create');
+            $this->redirect('/admin/brands/create');
         }
 
         $errors = $this->validateBrand($_POST);
@@ -77,7 +77,7 @@ class BrandController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/brands/create');
+            $this->redirect('/admin/brands/create');
         }
 
         $data = [
@@ -94,7 +94,7 @@ class BrandController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi thêm hãng: ' . $e->getMessage());
         }
 
-        $this->redirect('/websitebatminton/admin/brands');
+        $this->redirect('/admin/brands');
     }
 
     /**
@@ -106,7 +106,7 @@ class BrandController extends AdminBaseController {
 
         if (!$brand) {
             $this->session->flash('error', 'Hãng không tồn tại');
-            $this->redirect('/websitebatminton/admin/brands');
+            $this->redirect('/admin/brands');
         }
 
         $categories = $this->categoryModel->getActiveCategories();
@@ -125,7 +125,7 @@ class BrandController extends AdminBaseController {
      */
     public function update() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/brands');
+            $this->redirect('/admin/brands');
         }
 
         $id = $_POST['id'] ?? 0;
@@ -133,11 +133,11 @@ class BrandController extends AdminBaseController {
 
         if (!$brand) {
             $this->session->flash('error', 'Hãng không tồn tại');
-            $this->redirect('/websitebatminton/admin/brands');
+            $this->redirect('/admin/brands');
         }
 
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/brands/edit?id=' . $id);
+            $this->redirect('/admin/brands/edit?id=' . $id);
         }
 
         $errors = $this->validateBrand($_POST);
@@ -146,7 +146,7 @@ class BrandController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/brands/edit?id=' . $id);
+            $this->redirect('/admin/brands/edit?id=' . $id);
         }
 
         $data = [
@@ -163,7 +163,7 @@ class BrandController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi cập nhật hãng: ' . $e->getMessage());
         }
 
-        $this->redirect('/websitebatminton/admin/brands');
+        $this->redirect('/admin/brands');
     }
 
     /**
@@ -171,11 +171,11 @@ class BrandController extends AdminBaseController {
      */
     public function delete() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/brands');
+            $this->redirect('/admin/brands');
         }
 
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/brands');
+            $this->redirect('/admin/brands');
         }
 
         $id = $_POST['id'] ?? 0;
@@ -183,13 +183,13 @@ class BrandController extends AdminBaseController {
 
         if (!$brand) {
             $this->session->flash('error', 'Hãng không tồn tại');
-            $this->redirect('/websitebatminton/admin/brands');
+            $this->redirect('/admin/brands');
         }
 
         $products = $this->productModel->findAllBy('brand_id', $id);
         if (!empty($products)) {
             $this->session->flash('error', 'Không thể xóa hãng đang có sản phẩm');
-            $this->redirect('/websitebatminton/admin/brands');
+            $this->redirect('/admin/brands');
         }
 
         try {
@@ -199,7 +199,7 @@ class BrandController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi xóa hãng');
         }
 
-        $this->redirect('/websitebatminton/admin/brands');
+        $this->redirect('/admin/brands');
     }
 
     /**

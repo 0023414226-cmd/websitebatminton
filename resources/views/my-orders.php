@@ -14,7 +14,7 @@
                     <div class="card-body p-5">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <h3 class="fw-bold mb-0">Đơn hàng của bạn</h3>
-                            <a href="/websitebatminton/products" class="btn btn-outline-primary rounded-pill px-4">
+                            <a href="/products" class="btn btn-outline-primary rounded-pill px-4">
                                 <i class="bi bi-shop me-2"></i>Tiếp tục mua sắm
                             </a>
                         </div>
@@ -24,7 +24,7 @@
                                 <i class="bi bi-bag-check display-1 text-muted mb-4 opacity-50"></i>
                                 <h4 class="text-muted mb-3">Chưa có đơn hàng</h4>
                                 <p class="text-muted mb-4">Bạn chưa có đơn hàng nào. Hãy bắt đầu mua sắm ngay!</p>
-                                <a href="/websitebatminton/products" class="btn btn-primary btn-lg rounded-pill px-5">
+                                <a href="/products" class="btn btn-primary btn-lg rounded-pill px-5">
                                     <i class="bi bi-arrow-right me-2"></i>Bắt đầu mua sắm
                                 </a>
                             </div>
@@ -83,7 +83,7 @@
                                                     <span class="badge <?= $statusClass ?> px-3 py-2 fw-medium"><?= $statusText ?></span>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="/websitebatminton/order/<?= $order['id'] ?>" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                                    <a href="/order/<?= $order['id'] ?>" class="btn btn-sm btn-outline-primary rounded-pill px-3">
                                                         <i class="bi bi-eye me-1"></i>Chi tiết
                                                     </a>
                                                 </td>

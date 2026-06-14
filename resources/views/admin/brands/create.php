@@ -8,7 +8,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="/websitebatminton/admin/brands/store">
+        <form method="POST" action="/admin/brands/store">
             <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
 
             <div class="mb-3">
@@ -46,7 +46,7 @@
             </div>
 
             <div class="text-end">
-                <a href="/websitebatminton/admin/brands" class="btn btn-secondary">Hủy</a>
+                <a href="/admin/brands" class="btn btn-secondary">Hủy</a>
                 <button type="submit" class="btn btn-primary">
                     <i class="fas fa-save"></i> Lưu
                 </button>

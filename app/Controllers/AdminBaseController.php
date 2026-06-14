@@ -31,13 +31,13 @@ class AdminBaseController extends Controller {
      */
     protected function checkAuth() {
         if (!$this->session->isLoggedIn()) {
-            $this->redirect('/websitebatminton/admin/login');
+            $this->redirect('/admin/login');
         }
         
         // Check admin role
         if (!$this->session->hasRole('admin')) {
             $this->session->flash('error', 'Bạn không có quyền truy cập trang quản trị');
-            $this->redirect('/websitebatminton/admin/login');
+            $this->redirect('/admin/login');
         }
     }
     

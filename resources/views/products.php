@@ -89,8 +89,8 @@
                             
                             <!-- Product Image -->
                             <div class="product-image">
-                                <a href="/websitebatminton/products/<?= htmlspecialchars($product['slug']); ?>">
-                                    <img src="<?= $product['image'] ? '/websitebatminton/storage/uploads/' . $product['image'] : '/websitebatminton/assets/images/product.jpg'; ?>" 
+                                <a href="/products/<?= htmlspecialchars($product['slug']); ?>">
+                                    <img src="<?= $product['image'] ? '/storage/uploads/' . $product['image'] : '/assets/images/product.jpg'; ?>" 
                                         alt="<?= htmlspecialchars($product['name']); ?>" class="img-fluid">
                                 </a>
                             </div>
@@ -98,7 +98,7 @@
                             <!-- Product Info -->
                             <div class="product-info p-3">
                                 <h6 class="product-name mb-2">
-                                    <a href="/websitebatminton/products/<?= htmlspecialchars($product['slug']); ?>" class="text-decoration-none">
+                                    <a href="/products/<?= htmlspecialchars($product['slug']); ?>" class="text-decoration-none">
                                         <?= htmlspecialchars($product['name']); ?>
                                     </a>
                                 </h6>
@@ -127,7 +127,7 @@
                                         Hết hàng
                                     </button>
                                 <?php else: ?>
-                                    <a href="/websitebatminton/cart/add?product_id=<?= htmlspecialchars($product['id']) ?>" class="btn btn-primary w-100 btn-add-cart">
+                                    <a href="/cart/add?product_id=<?= htmlspecialchars($product['id']) ?>" class="btn btn-primary w-100 btn-add-cart">
                                         <i class="bi bi-cart-plus me-1"></i>
                                         Thêm giỏ hàng
                                     </a>
@@ -161,7 +161,7 @@
                     <i class="bi bi-inbox display-1 text-muted mb-4"></i>
                     <h3>Chưa có sản phẩm</h3>
                     <p class="text-muted">Không tìm thấy sản phẩm nào phù hợp với bộ lọc hiện tại.</p>
-                    <a href="/websitebatminton/products" class="btn btn-primary">Xem tất cả sản phẩm</a>
+                    <a href="/products" class="btn btn-primary">Xem tất cả sản phẩm</a>
                 </div>
                 <?php endif; ?>
             </div>

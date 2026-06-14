@@ -6,7 +6,7 @@
             <i class="bi bi-chat-dots me-2 text-primary"></i>
             Messenger - Tin nhắn khách hàng
         </h1>
-        <a href="/websitebatminton/admin/contacts" class="btn btn-secondary">
+        <a href="/admin/contacts" class="btn btn-secondary">
             <i class="bi bi-arrow-left me-2"></i>Quay lại danh sách
         </a>
     </div>

@@ -53,9 +53,9 @@ class Product extends Model {
     public function getPaginated($page = 1, $perPage = 10, $search = '', $categoryId = null) {
         $offset = ($page - 1) * $perPage;
         
-        $sql = "SELECT p.*, c.name as category_name, b.name as brand_name FROM {$this->table} p 
+        $sql = "SELECT p.*, c.name as category_name FROM {$this->table} p 
                 LEFT JOIN categories c ON p.category_id = c.id 
-                LEFT JOIN brands b ON p.brand_id = b.id";
+                ";
         $params = [];
         
         $conditions = ["p.status = 'active'"];
@@ -87,9 +87,9 @@ class Product extends Model {
     public function getPaginatedWithFilters($page = 1, $perPage = 10, $search = '', $categoryId = null, $brand = null, $priceRange = null, $color = null, $size = null, $sort = 'newest') {
         $offset = ($page - 1) * $perPage;
         
-        $sql = "SELECT p.*, c.name as category_name, b.name as brand_name FROM {$this->table} p 
+        $sql = "SELECT p.*, c.name as category_name FROM {$this->table} p 
                 LEFT JOIN categories c ON p.category_id = c.id 
-                LEFT JOIN brands b ON p.brand_id = b.id";
+                ";
         $params = [];
         
         $conditions = ["p.status = 'active'"];
@@ -108,7 +108,7 @@ class Product extends Model {
         }
         
         if ($brand) {
-            $conditions[] = "p.brand_id = ?";
+            $conditions[] = "1=1";
             $params[] = $brand;
         }
         
@@ -215,7 +215,7 @@ class Product extends Model {
         }
         
         if ($brand) {
-            $conditions[] = "brand_id = ?";
+            $conditions[] = "1=1";
             $params[] = $brand;
         }
         

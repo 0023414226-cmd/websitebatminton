@@ -8,7 +8,7 @@
             <div class="alert alert-danger"><?= htmlspecialchars($_SESSION['error']); unset($_SESSION['error']); ?></div>
         <?php endif; ?>
 
-        <form method="POST" action="/websitebatminton/register">
+        <form method="POST" action="/register">
             <div class="mb-3">
                 <label class="form-label">Họ và tên</label>
                 <input type="text" name="name" class="form-control" placeholder="Họ và tên" required>
@@ -33,7 +33,7 @@
         </form>
 
         <div class="auth-links">
-            <a href="/websitebatminton/login">↩ Quay lại đăng nhập</a>
+            <a href="/login">↩ Quay lại đăng nhập</a>
         </div>
     </div>
 </div>

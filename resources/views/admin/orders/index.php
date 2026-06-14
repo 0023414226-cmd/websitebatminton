@@ -8,7 +8,7 @@
         <!-- Search and Filter -->
         <div class="row mb-4">
             <div class="col-md-8">
-                <form method="GET" action="/websitebatminton/admin/orders" class="d-flex gap-2">
+                <form method="GET" action="/admin/orders" class="d-flex gap-2">
                     <input type="text" name="search" class="form-control" placeholder="Tìm kiếm đơn hàng..." 
                            value="<?php echo $search ?? ''; ?>">
                     <select name="status" class="form-select" style="width: 180px;">
@@ -77,7 +77,7 @@
                             </td>
                             <td><?php echo date('d/m/Y H:i', strtotime($order['created_at'])); ?></td>
                             <td>
-                                <a href="/websitebatminton/admin/orders/view?id=<?php echo $order['id']; ?>" 
+                                <a href="/admin/orders/view?id=<?php echo $order['id']; ?>" 
                                    class="btn btn-sm btn-outline-primary" title="Xem chi tiết">
                                     <i class="fas fa-eye"></i>
                                 </a>
@@ -153,7 +153,7 @@
 function updateStatus(orderId, status) {
     if (confirm('Bạn có chắc chắn muốn cập nhật trạng thái đơn hàng?')) {
         $.ajax({
-            url: '/websitebatminton/admin/orders/status',
+            url: '/admin/orders/status',
             type: 'POST',
             data: {
                 id: orderId,

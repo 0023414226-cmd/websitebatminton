@@ -124,7 +124,7 @@
                                     </td>
                                     <td><?php echo date('d/m/Y', strtotime($order['created_at'])); ?></td>
                                     <td>
-                                        <a href="/websitebatminton/admin/orders/view?id=<?php echo $order['id']; ?>" 
+                                        <a href="/admin/orders/view?id=<?php echo $order['id']; ?>" 
                                            class="btn btn-sm btn-outline-primary">
                                             <i class="fas fa-eye"></i>
                                         </a>
@@ -141,7 +141,7 @@
                 </div>
                 
                 <div class="text-center mt-3">
-                    <a href="/websitebatminton/admin/orders" class="btn btn-outline-primary">
+                    <a href="/admin/orders" class="btn btn-outline-primary">
                         Xem tất cả đơn hàng <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -173,7 +173,7 @@
                 <?php endif; ?>
                 
                 <div class="text-center mt-3">
-                    <a href="/websitebatminton/admin/products" class="btn btn-outline-primary">
+                    <a href="/admin/products" class="btn btn-outline-primary">
                         Xem tất cả sản phẩm <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -192,25 +192,25 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="/websitebatminton/admin/products/create" class="btn btn-outline-primary w-100 py-3">
+                        <a href="/admin/products/create" class="btn btn-outline-primary w-100 py-3">
                             <i class="fas fa-plus-circle fa-2x mb-2"></i>
                             <br>Thêm sản phẩm
                         </a>
                     </div>
                     <div class="col-md-3">
-                        <a href="/websitebatminton/admin/categories/create" class="btn btn-outline-success w-100 py-3">
+                        <a href="/admin/categories/create" class="btn btn-outline-success w-100 py-3">
                             <i class="fas fa-plus-circle fa-2x mb-2"></i>
                             <br>Thêm danh mục
                         </a>
                     </div>
                     <div class="col-md-3">
-                        <a href="/websitebatminton/admin/orders" class="btn btn-outline-warning w-100 py-3">
+                        <a href="/admin/orders" class="btn btn-outline-warning w-100 py-3">
                             <i class="fas fa-shopping-cart fa-2x mb-2"></i>
                             <br>Quản lý đơn hàng
                         </a>
                     </div>
                     <div class="col-md-3">
-                        <a href="/websitebatminton/admin/users/create" class="btn btn-outline-info w-100 py-3">
+                        <a href="/admin/users/create" class="btn btn-outline-info w-100 py-3">
                             <i class="fas fa-user-plus fa-2x mb-2"></i>
                             <br>Thêm người dùng
                         </a>

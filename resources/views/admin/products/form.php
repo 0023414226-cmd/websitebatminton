@@ -8,7 +8,7 @@
     </div>
     
     <div class="card-body">
-        <form method="POST" action="<?php echo $product ? '/websitebatminton/admin/products/update' : '/websitebatminton/admin/products/store'; ?>" 
+        <form method="POST" action="<?php echo $product ? '/admin/products/update' : '/admin/products/store'; ?>" 
               enctype="multipart/form-data">
             <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
             <?php if ($product): ?>
@@ -87,7 +87,7 @@
                         
                         <?php if ($product && $product['image']): ?>
                         <div class="mt-2">
-                            <img src="/websitebatminton/storage/uploads/<?php echo $product['image']; ?>" 
+                            <img src="/storage/uploads/<?php echo $product['image']; ?>" 
                                  alt="<?php echo $product['name']; ?>" 
                                  class="img-thumbnail" style="max-width: 200px;">
                             <p class="text-muted small mt-1">Ảnh hiện tại</p>
@@ -116,7 +116,7 @@
             </div>
             
             <div class="text-end">
-                <a href="/websitebatminton/admin/products" class="btn btn-secondary">Hủy</a>
+                <a href="/admin/products" class="btn btn-secondary">Hủy</a>
                 <button type="submit" class="btn btn-primary">
                     <i class="fas fa-save"></i> Lưu
                 </button>
@@ -144,7 +144,7 @@
 
     document.getElementById('category_id').addEventListener('change', function() {
         var categoryId = this.value;
-        var url = '/websitebatminton/admin/brands/filter';
+        var url = '/admin/brands/filter';
 
         if (categoryId) {
             url += '?category_id=' + encodeURIComponent(categoryId);

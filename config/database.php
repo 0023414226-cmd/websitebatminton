@@ -4,10 +4,10 @@
  * Using PDO for secure database connections
  */
 
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'badminton-mysql.mysql.database.azure.com');
 define('DB_NAME', 'db_badminton');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_USER', 'dbadmin');
+define('DB_PASS', 'Password@123456');
 define('DB_CHARSET', 'utf8mb4');
 
 /**

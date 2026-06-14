@@ -6,7 +6,7 @@
                 <h5 class="mb-0"><i class="fas fa-book me-2"></i>Quản lý hướng dẫn</h5>
             </div>
             <div class="col-md-6 text-end">
-                <a href="/websitebatminton/admin/guides/create" class="btn btn-primary">
+                <a href="/admin/guides/create" class="btn btn-primary">
                     <i class="fas fa-plus"></i> Thêm nội dung
                 </a>
             </div>
@@ -17,12 +17,12 @@
         <!-- Tabs -->
         <ul class="nav nav-tabs mb-4">
             <li class="nav-item">
-                <a class="nav-link active" href="/websitebatminton/admin/guides">
+                <a class="nav-link active" href="/admin/guides">
                     <i class="fas fa-file-alt me-1"></i> Nội dung
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/websitebatminton/admin/guide-categories">
+                <a class="nav-link" href="/admin/guide-categories">
                     <i class="fas fa-folder me-1"></i> Danh mục
                 </a>
             </li>
@@ -31,7 +31,7 @@
         <!-- Search -->
         <div class="row mb-4">
             <div class="col-md-6">
-                <form method="GET" action="/websitebatminton/admin/guides" class="d-flex gap-2">
+                <form method="GET" action="/admin/guides" class="d-flex gap-2">
                     <input type="text" name="search" class="form-control" placeholder="Tìm kiếm nội dung..." 
                            value="<?php echo $search ?? ''; ?>">
                     <button type="submit" class="btn btn-outline-primary">
@@ -66,11 +66,11 @@
                             <td><code><?php echo htmlspecialchars($item['slug']); ?></code></td>
                             <td><?php echo !empty($item['created_at']) ? date('d/m/Y', strtotime($item['created_at'])) : 'N/A'; ?></td>
                             <td>
-                                <a href="/websitebatminton/admin/guides/edit?id=<?php echo $item['id']; ?>" 
+                                <a href="/admin/guides/edit?id=<?php echo $item['id']; ?>" 
                                    class="btn btn-sm btn-outline-primary" title="Sửa">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <form method="POST" action="/websitebatminton/admin/guides/delete" 
+                                <form method="POST" action="/admin/guides/delete" 
                                       class="d-inline" onsubmit="return confirmDelete();">
                                     <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                                     <input type="hidden" name="id" value="<?php echo $item['id']; ?>">

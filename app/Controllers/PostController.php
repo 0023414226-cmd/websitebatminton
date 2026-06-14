@@ -57,11 +57,11 @@ class PostController extends AdminBaseController {
      */
     public function store() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/posts');
+            $this->redirect('/admin/posts');
         }
         
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/posts/create');
+            $this->redirect('/admin/posts/create');
         }
         
         $errors = $this->validatePost($_POST);
@@ -69,7 +69,7 @@ class PostController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/posts/create');
+            $this->redirect('/admin/posts/create');
         }
         
         $image = $this->uploadImage($_FILES['image'] ?? []);
@@ -92,7 +92,7 @@ class PostController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi thêm bài viết: ' . $e->getMessage());
         }
         
-        $this->redirect('/websitebatminton/admin/posts');
+        $this->redirect('/admin/posts');
     }
     
     /**
@@ -104,7 +104,7 @@ class PostController extends AdminBaseController {
         
         if (!$post) {
             $this->session->flash('error', 'Bài viết không tồn tại');
-            $this->redirect('/websitebatminton/admin/posts');
+            $this->redirect('/admin/posts');
         }
         
         $data = [
@@ -119,7 +119,7 @@ class PostController extends AdminBaseController {
      */
     public function update() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/posts');
+            $this->redirect('/admin/posts');
         }
         
         $id = $_POST['id'] ?? 0;
@@ -127,11 +127,11 @@ class PostController extends AdminBaseController {
         
         if (!$post) {
             $this->session->flash('error', 'Bài viết không tồn tại');
-            $this->redirect('/websitebatminton/admin/posts');
+            $this->redirect('/admin/posts');
         }
         
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/posts/edit?id=' . $id);
+            $this->redirect('/admin/posts/edit?id=' . $id);
         }
         
         $errors = $this->validatePost($_POST);
@@ -139,7 +139,7 @@ class PostController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/posts/edit?id=' . $id);
+            $this->redirect('/admin/posts/edit?id=' . $id);
         }
         
         $image = $post['image'];
@@ -171,7 +171,7 @@ class PostController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi cập nhật: ' . $e->getMessage());
         }
         
-        $this->redirect('/websitebatminton/admin/posts');
+        $this->redirect('/admin/posts');
     }
     
     /**
@@ -179,11 +179,11 @@ class PostController extends AdminBaseController {
      */
     public function delete() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/posts');
+            $this->redirect('/admin/posts');
         }
         
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/posts');
+            $this->redirect('/admin/posts');
         }
         
         $id = $_POST['id'] ?? 0;
@@ -191,7 +191,7 @@ class PostController extends AdminBaseController {
         
         if (!$post) {
             $this->session->flash('error', 'Bài viết không tồn tại');
-            $this->redirect('/websitebatminton/admin/posts');
+            $this->redirect('/admin/posts');
         }
         
         try {
@@ -204,7 +204,7 @@ class PostController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi xóa');
         }
         
-        $this->redirect('/websitebatminton/admin/posts');
+        $this->redirect('/admin/posts');
     }
     
     /**

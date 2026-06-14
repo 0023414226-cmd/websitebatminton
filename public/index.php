@@ -9,6 +9,8 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+header('Content-Type: text/html; charset=UTF-8');
+
 // Define constants
 define('ROOT_PATH', dirname(__DIR__));
 define('PUBLIC_PATH', __DIR__);

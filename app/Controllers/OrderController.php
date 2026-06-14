@@ -54,7 +54,7 @@ class OrderController extends AdminBaseController {
         
         if (!$order) {
             $this->session->flash('error', 'Đơn hàng không tồn tại');
-            $this->redirect('/websitebatminton/admin/orders');
+            $this->redirect('/admin/orders');
         }
         
         // Get order items
@@ -148,12 +148,12 @@ class OrderController extends AdminBaseController {
      */
     public function delete() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/orders');
+            $this->redirect('/admin/orders');
         }
         
         // Validate CSRF
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/orders');
+            $this->redirect('/admin/orders');
         }
         
         $id = $_POST['id'] ?? 0;
@@ -162,7 +162,7 @@ class OrderController extends AdminBaseController {
         
         if (!$order) {
             $this->session->flash('error', 'Đơn hàng không tồn tại');
-            $this->redirect('/websitebatminton/admin/orders');
+            $this->redirect('/admin/orders');
         }
         
         try {
@@ -172,7 +172,7 @@ class OrderController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi xóa đơn hàng');
         }
         
-        $this->redirect('/websitebatminton/admin/orders');
+        $this->redirect('/admin/orders');
     }
 }
 

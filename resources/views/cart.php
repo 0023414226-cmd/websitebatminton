@@ -12,13 +12,13 @@
                             <h2 class="fw-bold mb-1" style="color: #0d6efd;">Giỏ hàng</h2>
                             <small class="text-muted">Quản lý sản phẩm chọn mua</small>
                         </div>
-                        <a href="/websitebatminton/cart" class="text-primary fw-semibold"><?= isset($cartItems) ? count($cartItems) : 0 ?> sản phẩm</a>
+                        <a href="/cart" class="text-primary fw-semibold"><?= isset($cartItems) ? count($cartItems) : 0 ?> sản phẩm</a>
                     </div>
                     <?php if (empty($cartItems)): ?>
                         <div class="p-4 rounded-3 border border-info bg-light text-center">
                             <h5 class="mb-2">Giỏ hàng của bạn đang trống</h5>
-                            <p class="text-muted mb-3">Mời bạn mua thêm sản phẩm <a href="/websitebatminton/products">tại đây</a>.</p>
-                            <a href="/websitebatminton/products" class="btn btn-primary">Mua sắm ngay</a>
+                            <p class="text-muted mb-3">Mời bạn mua thêm sản phẩm <a href="/products">tại đây</a>.</p>
+                            <a href="/products" class="btn btn-primary">Mua sắm ngay</a>
                         </div>
                     <?php else: ?>
                         <div class="table-responsive">
@@ -37,10 +37,10 @@
                                         <tr class="cart-item-row" data-id="<?= $item['id'] ?>">
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <img src="<?= $item['image'] ? '/websitebatminton/storage/uploads/' . $item['image'] : '/websitebatminton/assets/images/product.jpg' ?>" alt="<?= htmlspecialchars($item['name']) ?>" style="width: 70px; height:70px; object-fit: cover; border-radius:10px; margin-right: 12px;" />
+                                                    <img src="<?= $item['image'] ? '/storage/uploads/' . $item['image'] : '/assets/images/product.jpg' ?>" alt="<?= htmlspecialchars($item['name']) ?>" style="width: 70px; height:70px; object-fit: cover; border-radius:10px; margin-right: 12px;" />
                                                     <div>
                                                         <?php $itemSlug = trim($item['slug'] ?? ''); ?>
-                                                        <a href="<?= $itemSlug ? '/websitebatminton/products/' . urlencode($itemSlug) : '/websitebatminton/product?id=' . urlencode($item['id']) ?>" class="text-dark fw-semibold"><?= htmlspecialchars($item['name'] ?? 'Sản phẩm') ?></a>
+                                                        <a href="<?= $itemSlug ? '/products/' . urlencode($itemSlug) : '/product?id=' . urlencode($item['id']) ?>" class="text-dark fw-semibold"><?= htmlspecialchars($item['name'] ?? 'Sản phẩm') ?></a>
                                                         <br><small class="text-muted">ID: #<?= str_pad($item['id'] ?? 0,5,'0',STR_PAD_LEFT) ?></small>
                                                     </div>
                                                 </div>
@@ -72,7 +72,7 @@
                             </table>
                         </div>
                         <div class="d-flex justify-content-between mt-3">
-                            <a href="/websitebatminton/products" class="btn btn-outline-primary">← Tiếp tục mua sắm</a>
+                            <a href="/products" class="btn btn-outline-primary">← Tiếp tục mua sắm</a>
                             <button class="btn btn-outline-danger" onclick="clearCart()">Xóa toàn bộ</button>
                         </div>
                     <?php endif; ?>
@@ -85,9 +85,9 @@
                                 <?php foreach ($viewedItems as $viewed): ?>
                                     <div class="col-12">
                                         <div class="d-flex align-items-center border rounded-2 p-2" style="background: #f8f9ff;">
-                                            <img src="<?= !empty($viewed['image']) ? '/websitebatminton/storage/uploads/' . $viewed['image'] : '/websitebatminton/assets/images/product.jpg' ?>" alt="<?= htmlspecialchars($viewed['name']) ?>" style="width: 60px; height:60px; object-fit: cover; border-radius: 8px; margin-right: 10px;" />
+                                            <img src="<?= !empty($viewed['image']) ? '/storage/uploads/' . $viewed['image'] : '/assets/images/product.jpg' ?>" alt="<?= htmlspecialchars($viewed['name']) ?>" style="width: 60px; height:60px; object-fit: cover; border-radius: 8px; margin-right: 10px;" />
                                             <div class="flex-grow-1">
-                                                <a href="/websitebatminton/products/<?= $viewed['slug'] ?? '' ?>" class="text-dark fw-semibold"><?= htmlspecialchars($viewed['name'] ?? 'Sản phẩm đã xem') ?></a>
+                                                <a href="/products/<?= $viewed['slug'] ?? '' ?>" class="text-dark fw-semibold"><?= htmlspecialchars($viewed['name'] ?? 'Sản phẩm đã xem') ?></a>
                                                 <div class="text-muted small">Giá: <?= formatPrice($viewed['sale_price'] ?? $viewed['price'] ?? 0) ?></div>
                                             </div>
                                             <span class="badge bg-primary">Đã xem</span>
@@ -125,15 +125,15 @@
                         <input type="text" class="form-control" placeholder="Nhập mã giảm giá (nếu có)">
                     </div>
                     <?php if ($session->isLoggedIn()): ?>
-                        <a href="/websitebatminton/checkout" class="btn btn-primary w-100 mb-2">THANH TOÁN NGAY</a>
+                        <a href="/checkout" class="btn btn-primary w-100 mb-2">THANH TOÁN NGAY</a>
                     <?php else: ?>
-                        <a href="/websitebatminton/login" class="btn btn-primary w-100 mb-2">ĐĂNG NHẬP ĐỂ THANH TOÁN</a>
+                        <a href="/login" class="btn btn-primary w-100 mb-2">ĐĂNG NHẬP ĐỂ THANH TOÁN</a>
                         <div class="alert alert-info text-center mb-2">
-                            <small>Vui lòng đăng nhập hoặc <a href="/websitebatminton/register">đăng ký</a> để tiếp tục thanh toán</small>
+                            <small>Vui lòng đăng nhập hoặc <a href="/register">đăng ký</a> để tiếp tục thanh toán</small>
                         </div>
                     <?php endif; ?>
                     <div class="text-center">
-                        <a href="/websitebatminton/products" class="text-decoration-none"><i class="bi bi-arrow-left"></i> Tiếp tục mua hàng</a>
+                        <a href="/products" class="text-decoration-none"><i class="bi bi-arrow-left"></i> Tiếp tục mua hàng</a>
                     </div>
                     <hr>
                     <p class="text-muted small mb-1"><i class="bi bi-shield-check me-2"></i>Bảo hành chính hãng</p>
@@ -151,7 +151,7 @@
 let cartTotal = <?= isset($cartTotal) ? $cartTotal : 0 ?>;
 
 function updateCart(id, qty) {
-    fetch('/websitebatminton/cart/update', {
+    fetch('/cart/update', {
         method: 'POST',
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         body: `id=${id}&quantity=${qty}`
@@ -203,7 +203,7 @@ document.addEventListener('click', function(e) {
         const id = e.target.dataset.id;
         if (!id) return;
         if (confirm('Xóa sản phẩm này khỏi giỏ hàng?')) {
-            fetch('/websitebatminton/cart/remove', {
+            fetch('/cart/remove', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 body: `id=${id}`
@@ -222,7 +222,7 @@ Array.from(document.querySelectorAll('.qty-input')).forEach(input => {
 
 function clearCart() {
     if (confirm('Xóa toàn bộ giỏ hàng?')) {
-        fetch('/websitebatminton/cart/clear', { method: 'POST' }).then(() => location.reload());
+        fetch('/cart/clear', { method: 'POST' }).then(() => location.reload());
     }
 }
 

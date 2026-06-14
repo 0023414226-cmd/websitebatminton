@@ -58,12 +58,12 @@ class UserController extends AdminBaseController {
      */
     public function store() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/users');
+            $this->redirect('/admin/users');
         }
         
         // Validate CSRF
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/users/create');
+            $this->redirect('/admin/users/create');
         }
         
         // Validate input
@@ -73,7 +73,7 @@ class UserController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/users/create');
+            $this->redirect('/admin/users/create');
         }
         
         // Check if email already exists
@@ -81,7 +81,7 @@ class UserController extends AdminBaseController {
         
         if ($existingUser) {
             $this->session->flash('error', 'Email đã được sử dụng');
-            $this->redirect('/websitebatminton/admin/users/create');
+            $this->redirect('/admin/users/create');
         }
         
         // Prepare data
@@ -102,7 +102,7 @@ class UserController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi thêm người dùng: ' . $e->getMessage());
         }
         
-        $this->redirect('/websitebatminton/admin/users');
+        $this->redirect('/admin/users');
     }
     
     /**
@@ -115,7 +115,7 @@ class UserController extends AdminBaseController {
         
         if (!$user) {
             $this->session->flash('error', 'Người dùng không tồn tại');
-            $this->redirect('/websitebatminton/admin/users');
+            $this->redirect('/admin/users');
         }
         
         // Don't show password
@@ -134,21 +134,21 @@ class UserController extends AdminBaseController {
      */
     public function update() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/users');
+            $this->redirect('/admin/users');
         }
         
         $id = $_POST['id'] ?? 0;
         
         // Validate CSRF
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/users/edit?id=' . $id);
+            $this->redirect('/admin/users/edit?id=' . $id);
         }
         
         $user = $this->userModel->find($id);
         
         if (!$user) {
             $this->session->flash('error', 'Người dùng không tồn tại');
-            $this->redirect('/websitebatminton/admin/users');
+            $this->redirect('/admin/users');
         }
         
         // Validate input
@@ -158,7 +158,7 @@ class UserController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/users/edit?id=' . $id);
+            $this->redirect('/admin/users/edit?id=' . $id);
         }
         
         // Check if email already exists (excluding current user)
@@ -166,7 +166,7 @@ class UserController extends AdminBaseController {
         
         if ($existingUser && $existingUser['id'] != $id) {
             $this->session->flash('error', 'Email đã được sử dụng');
-            $this->redirect('/websitebatminton/admin/users/edit?id=' . $id);
+            $this->redirect('/admin/users/edit?id=' . $id);
         }
         
         // Prepare data
@@ -191,7 +191,7 @@ class UserController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi cập nhật người dùng: ' . $e->getMessage());
         }
         
-        $this->redirect('/websitebatminton/admin/users');
+        $this->redirect('/admin/users');
     }
     
     /**
@@ -199,12 +199,12 @@ class UserController extends AdminBaseController {
      */
     public function delete() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/users');
+            $this->redirect('/admin/users');
         }
         
         // Validate CSRF
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/users');
+            $this->redirect('/admin/users');
         }
         
         $id = $_POST['id'] ?? 0;
@@ -213,13 +213,13 @@ class UserController extends AdminBaseController {
         
         if (!$user) {
             $this->session->flash('error', 'Người dùng không tồn tại');
-            $this->redirect('/websitebatminton/admin/users');
+            $this->redirect('/admin/users');
         }
         
         // Prevent deleting self
         if ($id == $this->adminUser['id']) {
             $this->session->flash('error', 'Bạn không thể xóa tài khoản của chính mình');
-            $this->redirect('/websitebatminton/admin/users');
+            $this->redirect('/admin/users');
         }
         
         try {
@@ -229,7 +229,7 @@ class UserController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi xóa người dùng');
         }
         
-        $this->redirect('/websitebatminton/admin/users');
+        $this->redirect('/admin/users');
     }
     
     /**

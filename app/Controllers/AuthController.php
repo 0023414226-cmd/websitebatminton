@@ -28,7 +28,7 @@ class AuthController extends Controller {
         // If already logged in, redirect to dashboard
         $session = new Session();
         if ($session->isLoggedIn() && $session->hasRole('admin')) {
-            $this->redirect('/websitebatminton/admin/dashboard');
+            $this->redirect('/admin/dashboard');
         }
         
         // Generate CSRF token
@@ -54,7 +54,7 @@ class AuthController extends Controller {
      */
     public function authenticate() {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            $this->redirect('/websitebatminton/admin/login');
+            $this->redirect('/admin/login');
         }
         
         // Validate CSRF token
@@ -62,7 +62,7 @@ class AuthController extends Controller {
         if (!CSRF::validate($token)) {
             $session = new Session();
             $session->flash('error', 'Token không hợp lệ');
-            $this->redirect('/websitebatminton/admin/login');
+            $this->redirect('/admin/login');
         }
         
         // Validate input
@@ -72,7 +72,7 @@ class AuthController extends Controller {
         if (empty($email) || empty($password)) {
             $session = new Session();
             $session->flash('error', 'Vui lòng nhập email và mật khẩu');
-            $this->redirect('/websitebatminton/admin/login');
+            $this->redirect('/admin/login');
         }
         
         // Verify credentials
@@ -81,21 +81,21 @@ class AuthController extends Controller {
         if (!$user) {
             $session = new Session();
             $session->flash('error', 'Email hoặc mật khẩu không đúng');
-            $this->redirect('/websitebatminton/admin/login');
+            $this->redirect('/admin/login');
         }
         
         // Check if user is admin
         if ($user['role'] !== 'admin') {
             $session = new Session();
             $session->flash('error', 'Bạn không có quyền truy cập trang quản trị');
-            $this->redirect('/websitebatminton/admin/login');
+            $this->redirect('/admin/login');
         }
         
         // Check if user is active
         if ($user['status'] !== 'active') {
             $session = new Session();
             $session->flash('error', 'Tài khoản của bạn đã bị vô hiệu hóa');
-            $this->redirect('/websitebatminton/admin/login');
+            $this->redirect('/admin/login');
         }
         
         // Set session
@@ -108,7 +108,7 @@ class AuthController extends Controller {
         ]);
         
         $session->flash('success', 'Chào mừng ' . $user['name'] . '!');
-        $this->redirect('/websitebatminton/admin/dashboard');
+        $this->redirect('/admin/dashboard');
     }
     
     /**

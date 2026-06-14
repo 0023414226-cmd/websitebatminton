@@ -15,7 +15,7 @@
                             <p class="text-muted small mb-0">Nhập mã đơn hàng hoặc số điện thoại để kiểm tra</p>
                         </div>
                         
-                        <form action="/websitebatminton/tra-cuu-don-hang" method="GET">
+                        <form action="/tra-cuu-don-hang" method="GET">
                             <div class="mb-3">
                                 <label class="form-label fw-semibold small">Mã đơn hàng</label>
                                 <div class="input-group">
@@ -173,7 +173,7 @@
                                                     <td class="ps-3">
                                                         <div class="d-flex align-items-center gap-3">
                                                             <?php if (!empty($item['product_image'])): ?>
-                                                                <img src="/websitebatminton/storage/uploads/<?= htmlspecialchars($item['product_image']) ?>" 
+                                                                <img src="/storage/uploads/<?= htmlspecialchars($item['product_image']) ?>" 
                                                                      alt="" class="rounded-2" style="width: 48px; height: 48px; object-fit: cover;">
                                                             <?php else: ?>
                                                                 <div class="rounded-2 bg-light d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
@@ -229,7 +229,7 @@
                             </div>
                             <h4 class="fw-bold text-dark mb-2">Không tìm thấy đơn hàng</h4>
                             <p class="text-muted mb-4">Vui lòng kiểm tra lại mã đơn hàng hoặc số điện thoại và thử lại.</p>
-                            <a href="/websitebatminton/products" class="btn btn-primary fw-bold px-4" style="border-radius: 12px; background: linear-gradient(135deg, #1C42F3, #4a68f6); border: none;">
+                            <a href="/products" class="btn btn-primary fw-bold px-4" style="border-radius: 12px; background: linear-gradient(135deg, #1C42F3, #4a68f6); border: none;">
                                 <i class="bi bi-shop me-2"></i>Tiếp tục mua sắm
                             </a>
                         </div>

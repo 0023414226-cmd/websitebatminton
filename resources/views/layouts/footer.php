@@ -39,11 +39,11 @@
                     <div class="footer-column">
                         <h5 class="footer-title">DANH MỤC SẢN PHẨM</h5>
                         <ul class="footer-links">
-                            <li><a href="/websitebatminton/products?category=1">Vợt cầu lông</a></li>
-                            <li><a href="/websitebatminton/products?category=2">Giày cầu lông</a></li>
-                            <li><a href="/websitebatminton/products?category=3">Phụ kiện cầu lông</a></li>
-                            <li><a href="/websitebatminton/products?category=4">Quần áo cầu lông</a></li>
-                            <li><a href="/websitebatminton/products?category=5">Balo cầu lông</a></li>
+                            <li><a href="/products?category=1">Vợt cầu lông</a></li>
+                            <li><a href="/products?category=2">Giày cầu lông</a></li>
+                            <li><a href="/products?category=3">Phụ kiện cầu lông</a></li>
+                            <li><a href="/products?category=4">Quần áo cầu lông</a></li>
+                            <li><a href="/products?category=5">Balo cầu lông</a></li>
                         </ul>
                     </div>
                 </div>
@@ -53,11 +53,11 @@
                     <div class="footer-column">
                         <h5 class="footer-title">CHÍNH SÁCH</h5>
                         <ul class="footer-links">
-                            <li><a href="/websitebatminton/guide">Chính sách mua hàng</a></li>
-                            <li><a href="/websitebatminton/guide">Chính sách đổi trả</a></li>
-                            <li><a href="/websitebatminton/guide">Chính sách vận chuyển</a></li>
-                            <li><a href="/websitebatminton/guide">Chính sách bảo hành</a></li>
-                            <li><a href="/websitebatminton/guide">Chính sách bảo mật</a></li>
+                            <li><a href="/guide">Chính sách mua hàng</a></li>
+                            <li><a href="/guide">Chính sách đổi trả</a></li>
+                            <li><a href="/guide">Chính sách vận chuyển</a></li>
+                            <li><a href="/guide">Chính sách bảo hành</a></li>
+                            <li><a href="/guide">Chính sách bảo mật</a></li>
                         </ul>
                     </div>
                 </div>

@@ -17,7 +17,7 @@
             <div class="card h-100 shadow-sm hover-lift">
                 <!-- Image -->
                 <div class="news-image overflow-hidden">
-                    <img src="<?= $post['image'] ? '/websitebatminton/storage/uploads/' . $post['image'] : '/websitebatminton/assets/images/news-default.jpg'; ?>" 
+                    <img src="<?= $post['image'] ? '/storage/uploads/' . $post['image'] : '/assets/images/news-default.jpg'; ?>" 
                          alt="<?= htmlspecialchars($post['title']); ?>" class="card-img-top img-fluid">
                 </div>
                 
@@ -30,7 +30,7 @@
                     
                     <!-- Title -->
                     <h5 class="card-title mb-3 px-3">
-                        <a href="/websitebatminton/news/<?= htmlspecialchars($post['slug']); ?>" class="text-dark text-decoration-none">
+                        <a href="/news/<?= htmlspecialchars($post['slug']); ?>" class="text-dark text-decoration-none">
                             <?= htmlspecialchars($post['title']); ?>
                         </a>
                     </h5>
@@ -42,7 +42,7 @@
                     
                     <!-- Read more -->
                     <div class="px-3 pb-3">
-                        <a href="/websitebatminton/news/<?= htmlspecialchars($post['slug']); ?>" class="btn btn-outline-primary btn-sm">
+                        <a href="/news/<?= htmlspecialchars($post['slug']); ?>" class="btn btn-outline-primary btn-sm">
                             Đọc thêm <i class="bi bi-arrow-right ms-1"></i>
                         </a>
                     </div>

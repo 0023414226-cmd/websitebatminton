@@ -9,7 +9,7 @@
                 </h5>
             </div>
             <div class="col-md-6 text-end">
-                <a href="/websitebatminton/admin/orders" class="btn btn-secondary">
+                <a href="/admin/orders" class="btn btn-secondary">
                     <i class="fas fa-arrow-left"></i> Quay lại
                 </a>
             </div>
@@ -128,7 +128,7 @@
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <?php if ($item['product_image']): ?>
-                                            <img src="/websitebatminton/storage/uploads/<?php echo $item['product_image']; ?>" 
+                                            <img src="/storage/uploads/<?php echo $item['product_image']; ?>" 
                                                  alt="<?php echo $item['product_name']; ?>" 
                                                  style="width: 50px; height: 50px; object-fit: cover;" 
                                                  class="me-2 rounded">
@@ -191,7 +191,7 @@
                         <h6 class="mb-0">Cập nhật trạng thái đơn hàng</h6>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="/websitebatminton/admin/orders/status" id="statusForm">
+                        <form method="POST" action="/admin/orders/status" id="statusForm">
                             <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                             <input type="hidden" name="id" value="<?php echo $order['id']; ?>">
                             <div class="row">
@@ -229,7 +229,7 @@
                         <h6 class="mb-0">Cập nhật trạng thái thanh toán</h6>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="/websitebatminton/admin/orders/payment-status" id="paymentStatusForm">
+                        <form method="POST" action="/admin/orders/payment-status" id="paymentStatusForm">
                             <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                             <input type="hidden" name="id" value="<?php echo $order['id']; ?>">
                             <div class="row">

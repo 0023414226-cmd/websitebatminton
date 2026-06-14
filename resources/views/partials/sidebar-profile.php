@@ -15,13 +15,13 @@ $is_addresses = ($current_page === 'profile-addresses.php');
     </div>
 
     <div class="profile-menu">
-        <a href="/websitebatminton/thanh-vien" class="menu-item <?php echo $is_profile ? 'active' : ''; ?>">
+        <a href="/thanh-vien" class="menu-item <?php echo $is_profile ? 'active' : ''; ?>">
             <i class="bi bi-person me-2"></i>Thông tin cá nhân
         </a>
-        <a href="/websitebatminton/my-orders" class="menu-item <?php echo $is_orders ? 'active' : ''; ?>">
+        <a href="/my-orders" class="menu-item <?php echo $is_orders ? 'active' : ''; ?>">
             <i class="bi bi-bag-check me-2"></i>Đơn hàng của bạn
         </a>
-        <a href="/websitebatminton/profile/addresses" class="menu-item <?php echo $is_addresses ? 'active' : ''; ?>">
+        <a href="/profile/addresses" class="menu-item <?php echo $is_addresses ? 'active' : ''; ?>">
             <i class="bi bi-geo-alt me-2"></i>Địa chỉ giao hàng
         </a>
     </div>

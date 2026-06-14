@@ -31,7 +31,7 @@ class DashboardController extends AdminBaseController {
     public function profile() {
         $session = new \Session();
         if (!$session->isLoggedIn() || (($session->user()['role'] ?? '') !== 'admin')) {
-            header('Location: /websitebatminton/login');
+            header('Location: /login');
             exit;
         }
 

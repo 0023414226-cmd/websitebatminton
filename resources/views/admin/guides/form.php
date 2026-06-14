@@ -8,7 +8,7 @@
     </div>
     
     <div class="card-body">
-        <form method="POST" action="<?php echo $content ? '/websitebatminton/admin/guides/update' : '/websitebatminton/admin/guides/store'; ?>">
+        <form method="POST" action="<?php echo $content ? '/admin/guides/update' : '/admin/guides/store'; ?>">
             <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
             <?php if ($content): ?>
             <input type="hidden" name="id" value="<?php echo $content['id']; ?>">
@@ -40,7 +40,7 @@
             </div>
             
             <div class="text-end">
-                <a href="/websitebatminton/admin/guides" class="btn btn-secondary">Hủy</a>
+                <a href="/admin/guides" class="btn btn-secondary">Hủy</a>
                 <button type="submit" class="btn btn-primary">
                     <i class="fas fa-save"></i> Lưu
                 </button>

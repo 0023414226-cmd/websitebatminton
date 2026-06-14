@@ -8,7 +8,7 @@
             <div class="col-lg-8">
                 <nav aria-label="breadcrumb" class="mb-3">
                     <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a href="/websitebatminton/" class="text-white-50">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="/" class="text-white-50">Trang chủ</a></li>
                         <li class="breadcrumb-item active text-white" aria-current="page">Giới thiệu</li>
                     </ol>
                 </nav>
@@ -25,7 +25,7 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-6">
                 <div class="about-intro-img position-relative">
-                    <img src="/websitebatminton/assets/images/banner/baner-yonex-astrox-99.jpg" alt="JP Sport Showroom" class="img-fluid rounded-4 shadow-lg">
+                    <img src="/assets/images/banner/baner-yonex-astrox-99.jpg" alt="JP Sport Showroom" class="img-fluid rounded-4 shadow-lg">
                     <div class="experience-badge position-absolute bg-primary text-white rounded-4 p-3 shadow-lg">
                         <span class="d-block fw-bold fs-2">10+</span>
                         <span class="small">năm kinh nghiệm</span>
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="/websitebatminton/products" class="btn btn-primary btn-lg px-4">
+                    <a href="/products" class="btn btn-primary btn-lg px-4">
                         Khám phá sản phẩm <i class="bi bi-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -194,7 +194,7 @@
         <div class="row g-4">
             <div class="col-lg-6">
                 <div class="showroom-card bg-white rounded-4 overflow-hidden shadow-sm h-100">
-                    <div class="showroom-img" style="height: 280px; background: url('/websitebatminton/assets/images/banner/banner1.webp') center/cover;"></div>
+                    <div class="showroom-img" style="height: 280px; background: url('/assets/images/banner/banner1.webp') center/cover;"></div>
                     <div class="p-4">
                         <h5 class="fw-bold mb-2">JP SPORT - TP. Hồ Chí Minh</h5>
                         <p class="text-muted mb-2"><i class="bi bi-geo-alt-fill text-primary me-2"></i>123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh</p>
@@ -205,7 +205,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="showroom-card bg-white rounded-4 overflow-hidden shadow-sm h-100">
-                    <div class="showroom-img" style="height: 280px; background: url('/websitebatminton/assets/images/banner/baner-victor-axelsen.webp') center/cover;"></div>
+                    <div class="showroom-img" style="height: 280px; background: url('/assets/images/banner/baner-victor-axelsen.webp') center/cover;"></div>
                     <div class="p-4">
                         <h5 class="fw-bold mb-2">JP SPORT - Đồng Tháp</h5>
                         <p class="text-muted mb-2"><i class="bi bi-geo-alt-fill text-primary me-2"></i>456 Đường DEF, TP. Cao Lãnh, Đồng Tháp</p>
@@ -270,10 +270,10 @@
                 <h2 class="fw-bold text-white mb-3">Sẵn sàng nâng cấp trải nghiệm cầu lông?</h2>
                 <p class="text-white-75 mb-4">Đến ngay JP SPORT để được tư vấn và trải nghiệm sản phẩm chính hãng với giá tốt nhất.</p>
                 <div class="d-flex flex-wrap gap-3 justify-content-center">
-                    <a href="/websitebatminton/products" class="btn btn-light btn-lg px-4 fw-bold">
+                    <a href="/products" class="btn btn-light btn-lg px-4 fw-bold">
                         <i class="bi bi-bag me-2"></i>Mua sắm ngay
                     </a>
-                    <a href="/websitebatminton/contact" class="btn btn-outline-light btn-lg px-4">
+                    <a href="/contact" class="btn btn-outline-light btn-lg px-4">
                         <i class="bi bi-chat-dots me-2"></i>Liên hệ tư vấn
                     </a>
                 </div>
@@ -293,7 +293,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('/websitebatminton/assets/images/banner/baner-yonex-astrox-99.jpg') center/cover;
+    background: url('/assets/images/banner/baner-yonex-astrox-99.jpg') center/cover;
     opacity: 0.15;
 }
 .text-white-75 {

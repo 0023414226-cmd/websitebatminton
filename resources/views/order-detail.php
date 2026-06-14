@@ -67,7 +67,7 @@
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <?php if (!empty($item['product_image'])): ?>
-                                                        <img src="/websitebatminton/storage/uploads/<?php echo htmlspecialchars($item['product_image']); ?>" 
+                                                        <img src="/storage/uploads/<?php echo htmlspecialchars($item['product_image']); ?>" 
                                                              alt="<?php echo htmlspecialchars($item['product_name'] ?? 'Sản phẩm'); ?>" 
                                                              style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px; border-radius: 4px;">
                                                     <?php endif; ?>
@@ -202,7 +202,7 @@
                     </div>
 
                     <!-- Action Buttons -->
-                    <a href="/websitebatminton/my-orders" class="btn btn-primary w-100 mb-2">
+                    <a href="/my-orders" class="btn btn-primary w-100 mb-2">
                         <i class="fas fa-arrow-left"></i> Quay lại
                     </a>
                     <?php if ($order['status'] !== 'cancelled' && $order['status'] !== 'completed'): ?>

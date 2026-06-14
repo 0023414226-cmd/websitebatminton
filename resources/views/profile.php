@@ -28,7 +28,7 @@
                             </div>
                         <?php endif; ?>
 
-                        <form action="/websitebatminton/profile/update" method="POST" class="row g-4">
+                        <form action="/profile/update" method="POST" class="row g-4">
                             <?php echo \CSRF::field(); ?>
                             <div class="col-md-12">
                                 <label class="form-label fw-medium mb-2">Họ và tên</label>

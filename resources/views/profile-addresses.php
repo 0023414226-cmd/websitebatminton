@@ -58,7 +58,7 @@ $email = htmlspecialchars($user['email'] ?? '');
                 <div id="edit-address-form-card" class="card profile-card border-0 rounded-4 shadow-sm d-none mb-4">
                     <div class="card-body p-4">
                         <h4 class="fw-bold mb-4 pb-2 border-bottom">Sửa địa chỉ giao hàng</h4>
-                        <form id="edit-shipping-form" action="/websitebatminton/profile/addresses" method="POST" class="row g-4">
+                        <form id="edit-shipping-form" action="/profile/addresses" method="POST" class="row g-4">
                             <?php echo \CSRF::field(); ?>
                             <input type="hidden" name="form_action" id="edit-form-action" value="edit">
                             <div class="col-md-12">
@@ -136,7 +136,7 @@ $email = htmlspecialchars($user['email'] ?? '');
                             </div>
                         <?php endif; ?>
 
-                        <form id="shipping-form" action="/websitebatminton/profile/addresses" method="POST" class="row g-4">
+                        <form id="shipping-form" action="/profile/addresses" method="POST" class="row g-4">
                             <?php echo \CSRF::field(); ?>
                             <div class="col-md-12">
                                 <label class="form-label fw-medium mb-2">HỌ *</label>

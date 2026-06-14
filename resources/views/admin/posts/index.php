@@ -1,7 +1,7 @@
 <div class="main-content">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 mb-0">Quản lý bài viết</h1>
-        <a href="/websitebatminton/admin/posts/create" class="btn btn-primary">
+        <a href="/admin/posts/create" class="btn btn-primary">
             <i class="bi bi-plus-circle me-1"></i> Thêm mới
         </a>
     </div>
@@ -27,7 +27,7 @@
                         </button>
                     </div>
                     <div class="col-md-2">
-                        <a href="/websitebatminton/admin/posts" class="btn btn-secondary w-100">Xóa filter</a>
+                        <a href="/admin/posts" class="btn btn-secondary w-100">Xóa filter</a>
                     </div>
                 </div>
             </form>
@@ -42,7 +42,7 @@
                     <i class="bi bi-file-earmark-text display-1 text-muted mb-3"></i>
                     <h4>Chưa có bài viết</h4>
                     <p class="text-muted">Tạo bài viết đầu tiên để bắt đầu</p>
-                    <a href="/websitebatminton/admin/posts/create" class="btn btn-primary">Tạo bài viết</a>
+                    <a href="/admin/posts/create" class="btn btn-primary">Tạo bài viết</a>
                 </div>
             <?php else: ?>
                 <div class="table-responsive">
@@ -81,18 +81,18 @@
                                 </td>
                                 <td>
                                     <?php if ($post['image']): ?>
-                                        <img src="/websitebatminton/storage/uploads/<?= htmlspecialchars($post['image']); ?>" alt="" class="rounded" style="width: 50px; height: 40px; object-fit: cover;">
+                                        <img src="/storage/uploads/<?= htmlspecialchars($post['image']); ?>" alt="" class="rounded" style="width: 50px; height: 40px; object-fit: cover;">
                                     <?php else: ?>
                                         <span class="text-muted">No image</span>
                                     <?php endif; ?>
                                 </td>
                                 <td><small class="text-muted"><?= date('d/m/Y H:i', strtotime($post['created_at'])); ?></small></td>
                                 <td>
-                                    <a href="/websitebatminton/admin/posts/edit?id=<?= $post['id']; ?>" 
+                                    <a href="/admin/posts/edit?id=<?= $post['id']; ?>" 
                                        class="btn btn-sm btn-outline-primary" title="Sửa">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="POST" action="/websitebatminton/admin/posts/delete" 
+                                    <form method="POST" action="/admin/posts/delete" 
                                           class="d-inline" onsubmit="return confirm('Xóa bài viết này?');">
                                         <input type="hidden" name="csrf_token" value="<?= $csrf_token; ?>">
                                         <input type="hidden" name="id" value="<?= $post['id']; ?>">

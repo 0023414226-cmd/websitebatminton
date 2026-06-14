@@ -8,7 +8,7 @@
     </div>
     
     <div class="card-body">
-        <form method="POST" action="<?php echo $category ? '/websitebatminton/admin/guide-categories/update' : '/websitebatminton/admin/guide-categories/store'; ?>">
+        <form method="POST" action="<?php echo $category ? '/admin/guide-categories/update' : '/admin/guide-categories/store'; ?>">
             <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
             <?php if ($category): ?>
             <input type="hidden" name="id" value="<?php echo $category['id']; ?>">
@@ -26,7 +26,7 @@
             </div>
             
             <div class="text-end">
-                <a href="/websitebatminton/admin/guide-categories" class="btn btn-secondary">Hủy</a>
+                <a href="/admin/guide-categories" class="btn btn-secondary">Hủy</a>
                 <button type="submit" class="btn btn-primary">
                     <i class="fas fa-save"></i> Lưu
                 </button>

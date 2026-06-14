@@ -10,7 +10,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/websitebatminton/assets/css/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
     
     <style>
         body {
@@ -65,38 +65,38 @@
                 </div>
                 
                 <div class="py-3">
-                    <a href="/websitebatminton/admin/dashboard" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'dashboard') !== false ? 'active' : ''; ?>">
+                    <a href="/admin/dashboard" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'dashboard') !== false ? 'active' : ''; ?>">
                         <i class="fas fa-tachometer-alt"></i> Dashboard
                     </a>
-                    <a href="/websitebatminton/admin/products" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'products') !== false ? 'active' : ''; ?>">
+                    <a href="/admin/products" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'products') !== false ? 'active' : ''; ?>">
                         <i class="fas fa-box"></i> Sản phẩm
                     </a>
-                    <a href="/websitebatminton/admin/categories" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'categories') !== false ? 'active' : ''; ?>">
+                    <a href="/admin/categories" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'categories') !== false ? 'active' : ''; ?>">
                         <i class="fas fa-tags"></i> Danh mục
                     </a>
-                    <a href="/websitebatminton/admin/brands" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'brands') !== false ? 'active' : ''; ?>">
+                    <a href="/admin/brands" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'brands') !== false ? 'active' : ''; ?>">
                         <i class="fas fa-industry"></i> Quản lý Hãng
                     </a>
-                    <a href="/websitebatminton/admin/orders" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'orders') !== false ? 'active' : ''; ?>">
+                    <a href="/admin/orders" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'orders') !== false ? 'active' : ''; ?>">
                         <i class="fas fa-shopping-cart"></i> Đơn hàng
                     </a>
-                <a href="/websitebatminton/admin/users" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'users') !== false ? 'active' : ''; ?>">
+                <a href="/admin/users" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'users') !== false ? 'active' : ''; ?>">
                         <i class="fas fa-users"></i> Người dùng
                     </a>
-                    <a href="/websitebatminton/admin/posts" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'posts') !== false ? 'active' : ''; ?>">
+                    <a href="/admin/posts" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'posts') !== false ? 'active' : ''; ?>">
                         <i class="fas fa-newspaper"></i> Bài viết
                     </a>
-                    <a href="/websitebatminton/admin/guides" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'guides') !== false || strpos($_SERVER['REQUEST_URI'], 'guide-categor') !== false ? 'active' : ''; ?>">
+                    <a href="/admin/guides" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'guides') !== false || strpos($_SERVER['REQUEST_URI'], 'guide-categor') !== false ? 'active' : ''; ?>">
                         <i class="fas fa-book"></i> Hướng dẫn
                     </a>
-                    <a href="/websitebatminton/admin/contacts/messenger" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'contacts') !== false || strpos($_SERVER['REQUEST_URI'], 'messenger') !== false ? 'active' : ''; ?>">
+                    <a href="/admin/contacts/messenger" class="<?php echo strpos($_SERVER['REQUEST_URI'], 'contacts') !== false || strpos($_SERVER['REQUEST_URI'], 'messenger') !== false ? 'active' : ''; ?>">
                         <i class="fas fa-envelope"></i> Tin nhắn
                     </a>
                     <div class="border-top border-secondary my-2"></div>
                     <a href="/websitebatminton">
                         <i class="fas fa-home"></i> Xem website
                     </a>
-                    <a href="/websitebatminton/admin/logout">
+                    <a href="/admin/logout">
                         <i class="fas fa-sign-out-alt"></i> Đăng xuất
                     </a>
                 </div>

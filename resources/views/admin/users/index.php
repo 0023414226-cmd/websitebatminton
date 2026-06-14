@@ -6,7 +6,7 @@
                 <h5 class="mb-0"><i class="fas fa-users me-2"></i>Quản lý người dùng</h5>
             </div>
             <div class="col-md-6 text-end">
-                <a href="/websitebatminton/admin/users/create" class="btn btn-primary">
+                <a href="/admin/users/create" class="btn btn-primary">
                     <i class="fas fa-plus"></i> Thêm người dùng
                 </a>
             </div>
@@ -17,7 +17,7 @@
         <!-- Search -->
         <div class="row mb-4">
             <div class="col-md-6">
-                <form method="GET" action="/websitebatminton/admin/users" class="d-flex gap-2">
+                <form method="GET" action="/admin/users" class="d-flex gap-2">
                     <input type="text" name="search" class="form-control" placeholder="Tìm kiếm người dùng..." 
                            value="<?php echo $search ?? ''; ?>">
                     <button type="submit" class="btn btn-outline-primary">
@@ -64,12 +64,12 @@
                             </td>
                             <td><?php echo date('d/m/Y', strtotime($user['created_at'])); ?></td>
                             <td>
-                                <a href="/websitebatminton/admin/users/edit?id=<?php echo $user['id']; ?>" 
+                                <a href="/admin/users/edit?id=<?php echo $user['id']; ?>" 
                                    class="btn btn-sm btn-outline-primary" title="Sửa">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <?php if ($user['id'] != $admin_user['id']): ?>
-                                <form method="POST" action="/websitebatminton/admin/users/delete" 
+                                <form method="POST" action="/admin/users/delete" 
                                       class="d-inline" onsubmit="return confirmDelete();">
                                     <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                                     <input type="hidden" name="id" value="<?php echo $user['id']; ?>">

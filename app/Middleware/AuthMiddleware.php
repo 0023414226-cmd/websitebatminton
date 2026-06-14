@@ -13,7 +13,7 @@ class AuthMiddleware {
         
         if (!$session->isLoggedIn()) {
             $session->flash('error', 'Vui lòng đăng nhập để tiếp tục');
-            header("Location: /websitebatminton/admin/login");
+            header("Location: /admin/login");
             exit;
         }
         
@@ -36,7 +36,7 @@ class AuthMiddleware {
         if (!$this->isAdmin()) {
             $session = new Session();
             $session->flash('error', 'Bạn không có quyền truy cập');
-            header("Location: /websitebatminton/admin/login");
+            header("Location: /admin/login");
             exit;
         }
     }

@@ -4,14 +4,14 @@
 <div class="main-content">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 mb-0"><?= $post ? 'Chỉnh sửa bài viết' : 'Thêm bài viết mới'; ?></h1>
-        <a href="/websitebatminton/admin/posts" class="btn btn-secondary">
+        <a href="/admin/posts" class="btn btn-secondary">
             <i class="bi bi-arrow-left me-1"></i>Quay lại
         </a>
     </div>
 
     <div class="card shadow-sm">
         <div class="card-body p-4">
-            <form method="POST" action="<?= $post ? '/websitebatminton/admin/posts/update' : '/websitebatminton/admin/posts/store'; ?>" enctype="multipart/form-data" class="needs-validation" novalidate>
+            <form method="POST" action="<?= $post ? '/admin/posts/update' : '/admin/posts/store'; ?>" enctype="multipart/form-data" class="needs-validation" novalidate>
                 <input type="hidden" name="csrf_token" value="<?= $csrf_token; ?>">
                 <?php if ($post): ?>
                     <input type="hidden" name="id" value="<?= $post['id']; ?>">
@@ -44,7 +44,7 @@
                             <input type="file" class="form-control" id="image" name="image" accept="image/*">
                             <?php if ($post && $post['image']): ?>
                                 <div class="mt-2">
-                                    <img src="/websitebatminton/storage/uploads/<?= htmlspecialchars($post['image']); ?>" class="rounded shadow-sm" style="max-width: 200px; max-height: 150px;">
+                                    <img src="/storage/uploads/<?= htmlspecialchars($post['image']); ?>" class="rounded shadow-sm" style="max-width: 200px; max-height: 150px;">
                                     <small class="text-muted d-block">Hình hiện tại</small>
                                 </div>
                             <?php endif; ?>
@@ -92,7 +92,7 @@
                         <i class="bi bi-check-circle me-2"></i>
                         <?= $post ? 'Cập nhật' : 'Đăng bài'; ?>
                     </button>
-                    <a href="/websitebatminton/admin/posts" class="btn btn-secondary">Hủy</a>
+                    <a href="/admin/posts" class="btn btn-secondary">Hủy</a>
                 </div>
             </form>
         </div>

@@ -76,12 +76,12 @@ class ProductController extends AdminBaseController {
      */
     public function store() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/products');
+            $this->redirect('/admin/products');
         }
         
         // Validate CSRF
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/products/create');
+            $this->redirect('/admin/products/create');
         }
         
         // Validate input
@@ -91,7 +91,7 @@ class ProductController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/products/create');
+            $this->redirect('/admin/products/create');
         }
         
         // Handle image upload
@@ -99,7 +99,7 @@ class ProductController extends AdminBaseController {
         
         if (!$image && !empty($_FILES['image']['name'])) {
             $this->session->flash('error', 'Lỗi upload hình ảnh');
-            $this->redirect('/websitebatminton/admin/products/create');
+            $this->redirect('/admin/products/create');
         }
         
         // Prepare data
@@ -124,7 +124,7 @@ class ProductController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi thêm sản phẩm: ' . $e->getMessage());
         }
         
-        $this->redirect('/websitebatminton/admin/products');
+        $this->redirect('/admin/products');
     }
     
     /**
@@ -137,7 +137,7 @@ class ProductController extends AdminBaseController {
         
         if (!$product) {
             $this->session->flash('error', 'Sản phẩm không tồn tại');
-            $this->redirect('/websitebatminton/admin/products');
+            $this->redirect('/admin/products');
         }
         
         $categories = $this->categoryModel->getActiveCategories();
@@ -158,21 +158,21 @@ class ProductController extends AdminBaseController {
      */
     public function update() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/products');
+            $this->redirect('/admin/products');
         }
         
         $id = $_POST['id'] ?? 0;
         
         // Validate CSRF
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/products/edit?id=' . $id);
+            $this->redirect('/admin/products/edit?id=' . $id);
         }
         
         $product = $this->productModel->find($id);
         
         if (!$product) {
             $this->session->flash('error', 'Sản phẩm không tồn tại');
-            $this->redirect('/websitebatminton/admin/products');
+            $this->redirect('/admin/products');
         }
         
         // Validate input
@@ -182,7 +182,7 @@ class ProductController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/products/edit?id=' . $id);
+            $this->redirect('/admin/products/edit?id=' . $id);
         }
         
         // Handle image upload
@@ -222,7 +222,7 @@ class ProductController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi cập nhật sản phẩm: ' . $e->getMessage());
         }
         
-        $this->redirect('/websitebatminton/admin/products');
+        $this->redirect('/admin/products');
     }
     
     /**
@@ -230,12 +230,12 @@ class ProductController extends AdminBaseController {
      */
     public function delete() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/products');
+            $this->redirect('/admin/products');
         }
         
         // Validate CSRF
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/products');
+            $this->redirect('/admin/products');
         }
         
         $id = $_POST['id'] ?? 0;
@@ -244,7 +244,7 @@ class ProductController extends AdminBaseController {
         
         if (!$product) {
             $this->session->flash('error', 'Sản phẩm không tồn tại');
-            $this->redirect('/websitebatminton/admin/products');
+            $this->redirect('/admin/products');
         }
         
         try {
@@ -259,7 +259,7 @@ class ProductController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi xóa sản phẩm');
         }
         
-        $this->redirect('/websitebatminton/admin/products');
+        $this->redirect('/admin/products');
     }
     
     /**

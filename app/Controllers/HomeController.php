@@ -133,13 +133,13 @@ class HomeController {
     public function addresses() {
         $session = new \Session();
         if (!$session->isLoggedIn()) {
-            $this->redirect('/websitebatminton/login');
+            $this->redirect('/login');
             return;
         }
 
         $user = $session->user();
         if (($user['role'] ?? 'customer') === 'admin') {
-            $this->redirect('/websitebatminton/admin/dashboard');
+            $this->redirect('/admin/dashboard');
             return;
         }
 
@@ -167,7 +167,7 @@ class HomeController {
             } else {
                 $_SESSION['error'] = 'Lỗi cập nhật địa chỉ';
             }
-            $this->redirect('/websitebatminton/profile/addresses');
+            $this->redirect('/profile/addresses');
             return;
         }
 
@@ -389,13 +389,13 @@ class HomeController {
     public function addToCart() {
         $productId = $_GET['product_id'] ?? null;
         if (!$productId) {
-            $this->redirect('/websitebatminton/products');
+            $this->redirect('/products');
             return;
         }
 
         $product = $this->productModel->find($productId);
         if (!$product) {
-            $this->redirect('/websitebatminton/products');
+            $this->redirect('/products');
             return;
         }
 
@@ -407,7 +407,7 @@ class HomeController {
             'image' => $product['image'] ?? ''
         ]);
 
-        $this->redirect('/websitebatminton/cart');
+        $this->redirect('/cart');
     }
 
     public function cart() {
@@ -503,14 +503,14 @@ class HomeController {
     public function profile() {
         $session = new \Session();
         if (!$session->isLoggedIn()) {
-            $this->redirect('/websitebatminton/login');
+            $this->redirect('/login');
             return;
         }
 
         $user = $session->user();
         if (($user['role'] ?? 'customer') === 'admin') {
             // Nếu admin vô nhầm trang thành viên thì chuyển về admin dashboard
-            $this->redirect('/websitebatminton/admin/dashboard');
+            $this->redirect('/admin/dashboard');
             return;
         }
 
@@ -535,21 +535,21 @@ class HomeController {
      */
     public function profileUpdate() {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            $this->redirect('/websitebatminton/thanh-vien');
+            $this->redirect('/thanh-vien');
             return;
         }
 
         $session = new \Session();
         if (!$session->isLoggedIn()) {
             $_SESSION['error'] = 'Vui lòng đăng nhập';
-            $this->redirect('/websitebatminton/login');
+            $this->redirect('/login');
             return;
         }
 
         // Validate CSRF
         if (!$this->validateCsrf()) {
             $_SESSION['error'] = 'Lỗi bảo mật CSRF. Vui lòng thử lại.';
-            $this->redirect('/websitebatminton/thanh-vien');
+            $this->redirect('/thanh-vien');
             return;
         }
 
@@ -570,14 +570,14 @@ class HomeController {
         // Validate required fields
         if (empty($data['name']) || empty($data['email'])) {
             $_SESSION['error'] = 'Vui lòng điền đầy đủ thông tin (Tên và Email bắt buộc)';
-            $this->redirect('/websitebatminton/profile');
+            $this->redirect('/profile');
             return;
         }
 
         // Validate email format
         if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
             $_SESSION['error'] = 'Email không hợp lệ';
-            $this->redirect('/websitebatminton/profile');
+            $this->redirect('/profile');
             return;
         }
 
@@ -613,18 +613,18 @@ class HomeController {
             $session->set('user', $user);
 
             $_SESSION['success'] = 'Cập nhật thông tin thành công';
-            $this->redirect('/websitebatminton/thanh-vien');
+            $this->redirect('/thanh-vien');
         } catch (Exception $e) {
             error_log('Profile update error: ' . $e->getMessage());
             $_SESSION['error'] = 'Lỗi cập nhật thông tin: ' . $e->getMessage();
-            $this->redirect('/websitebatminton/thanh-vien');
+            $this->redirect('/thanh-vien');
         }
     }
 
     public function myOrders() {
         $session = new \Session();
         if (!$session->isLoggedIn()) {
-            $this->redirect('/websitebatminton/login');
+            $this->redirect('/login');
             return;
         }
 
@@ -649,9 +649,9 @@ class HomeController {
         $session = new \Session();
         if ($session->isLoggedIn()) {
             if (($session->user()['role'] ?? 'customer') === 'admin') {
-                $this->redirect('/websitebatminton/admin/dashboard');
+                $this->redirect('/admin/dashboard');
             } else {
-                $this->redirect('/websitebatminton/thanh-vien');
+                $this->redirect('/thanh-vien');
             }
             return;
         }
@@ -661,7 +661,7 @@ class HomeController {
     public function loginSubmit() {
         $session = new \Session();
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            $this->redirect('/websitebatminton/login');
+            $this->redirect('/login');
             return;
         }
 
@@ -670,20 +670,20 @@ class HomeController {
 
         if (empty($email) || empty($password)) {
             $_SESSION['error'] = 'Email và mật khẩu không được để trống';
-            $this->redirect('/websitebatminton/login');
+            $this->redirect('/login');
             return;
         }
 
         $user = $this->userModel->verifyPassword($email, $password);
         if (!$user) {
             $_SESSION['error'] = 'Đăng nhập không thành công. Bạn chưa đăng kí tài khoản';
-            $this->redirect('/websitebatminton/login');
+            $this->redirect('/login');
             return;
         }
 
         if (($user['role'] ?? 'customer') !== 'admin' && empty($user['email_verified_at'])) {
             $_SESSION['error'] = 'Vui lòng xác thực email trước khi đăng nhập.';
-            $this->redirect('/websitebatminton/login');
+            $this->redirect('/login');
             return;
         }
 
@@ -710,9 +710,9 @@ class HomeController {
         }
 
         if (($user['role'] ?? 'customer') === 'admin') {
-            $this->redirect('/websitebatminton/admin/dashboard');
+            $this->redirect('/admin/dashboard');
         } else {
-            $this->redirect('/websitebatminton/thanh-vien');
+            $this->redirect('/thanh-vien');
         }
     }
 
@@ -721,7 +721,7 @@ class HomeController {
     public function register() {
         $session = new \Session();
         if ($session->isLoggedIn()) {
-            $this->redirect('/websitebatminton/profile');
+            $this->redirect('/profile');
             return;
         }
         $this->view('register');
@@ -729,7 +729,7 @@ class HomeController {
 
     public function registerSubmit() {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            $this->redirect('/websitebatminton/register');
+            $this->redirect('/register');
             return;
         }
 
@@ -741,13 +741,13 @@ class HomeController {
 
         if (empty($name) || empty($email) || empty($phone) || empty($password)) {
             $_SESSION['error'] = 'Vui lòng điền đầy đủ thông tin';
-            $this->redirect('/websitebatminton/register');
+            $this->redirect('/register');
             return;
         }
 
         if ($password !== $confirm) {
             $_SESSION['error'] = 'Mật khẩu xác nhận không khớp';
-            $this->redirect('/websitebatminton/register');
+            $this->redirect('/register');
             return;
         }
 
@@ -766,8 +766,8 @@ class HomeController {
         $_SESSION['pending_email_verification'][$verificationToken] = $userId;
 
         $_SESSION['success'] = 'Đăng ký thành công. Vui lòng kiểm tra email để xác thực (có thể dùng link sau khi demo).';
-        $_SESSION['verification_link'] = '/websitebatminton/verify-email?token=' . $verificationToken;
-        $this->redirect('/websitebatminton/login');
+        $_SESSION['verification_link'] = '/verify-email?token=' . $verificationToken;
+        $this->redirect('/login');
     }
 
     // [Remaining methods: logout, verifyEmail, contact, contactSend, contactSuccess, about, adminContacts, checkout, createOrder, clearCart, orderDetail, guide - copy exactly as they exist]
@@ -776,14 +776,14 @@ class HomeController {
         $session = new \Session();
         $session->destroy();
         setcookie('remember_me', '', time() - 3600, '/');
-        $this->redirect('/websitebatminton/login');
+        $this->redirect('/login');
     }
 
     public function verifyEmail() {
         $token = $_GET['token'] ?? '';
         if (empty($token) || empty($_SESSION['pending_email_verification'][$token])) {
             $_SESSION['error'] = 'Liên kết xác thực không hợp lệ hoặc đã hết hạn.';
-            $this->redirect('/websitebatminton/login');
+            $this->redirect('/login');
             return;
         }
 
@@ -793,7 +793,7 @@ class HomeController {
         unset($_SESSION['pending_email_verification'][$token]);
 
         $_SESSION['success'] = 'Xác thực email thành công. Bạn có thể đăng nhập ngay.';
-        $this->redirect('/websitebatminton/login');
+        $this->redirect('/login');
     }
 
     /**
@@ -810,7 +810,7 @@ class HomeController {
         // Basic validation
         if (empty($_POST['name']) || empty($_POST['phone'] ) || empty($_POST['message'])) {
             $_SESSION['error'] = 'Vui lòng điền đầy đủ thông tin';
-            header('Location: /websitebatminton/contact');
+            header('Location: /contact');
             exit;
         }
         
@@ -841,7 +841,7 @@ class HomeController {
             ]
         );
         $_SESSION['success'] = 'Gửi thành công! Chúng tôi sẽ liên hệ sớm.';
-        header('Location: /websitebatminton/contact/success');
+        header('Location: /contact/success');
         exit;
     }
     
@@ -904,7 +904,7 @@ class HomeController {
         $session = new \Session();
         if (!$session->isLoggedIn()) {
             $_SESSION['error'] = 'Vui lòng đăng nhập để tiếp tục thanh toán';
-            $this->redirect('/websitebatminton/login');
+            $this->redirect('/login');
             return;
         }
 
@@ -913,7 +913,7 @@ class HomeController {
         
         if (empty($cartItems)) {
             $_SESSION['error'] = 'Giỏ hàng của bạn trống';
-            $this->redirect('/websitebatminton/cart');
+            $this->redirect('/cart');
             return;
         }
 
@@ -1076,7 +1076,7 @@ class HomeController {
         $session = new \Session();
         if (!$session->isLoggedIn()) {
             $_SESSION['error'] = 'Vui lòng đăng nhập';
-            $this->redirect('/websitebatminton/login');
+            $this->redirect('/login');
             return;
         }
 
@@ -1084,7 +1084,7 @@ class HomeController {
         $orderId = $this->getParam('id');
         if (!$orderId) {
             $_SESSION['error'] = 'Đơn hàng không tồn tại';
-            $this->redirect('/websitebatminton/my-orders');
+            $this->redirect('/my-orders');
             return;
         }
 
@@ -1097,7 +1097,7 @@ class HomeController {
 
         if (!$order) {
             $_SESSION['error'] = 'Đơn hàng không tồn tại';
-            $this->redirect('/websitebatminton/my-orders');
+            $this->redirect('/my-orders');
             return;
         }
 

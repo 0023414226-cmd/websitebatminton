@@ -60,11 +60,11 @@ class GuideController extends AdminBaseController {
      */
     public function store() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/guides');
+            $this->redirect('/admin/guides');
         }
         
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/guides/create');
+            $this->redirect('/admin/guides/create');
         }
         
         $errors = $this->validateContent($_POST);
@@ -72,7 +72,7 @@ class GuideController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/guides/create');
+            $this->redirect('/admin/guides/create');
         }
         
         $data = [
@@ -89,7 +89,7 @@ class GuideController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi thêm nội dung: ' . $e->getMessage());
         }
         
-        $this->redirect('/websitebatminton/admin/guides');
+        $this->redirect('/admin/guides');
     }
     
     /**
@@ -101,7 +101,7 @@ class GuideController extends AdminBaseController {
         
         if (!$content) {
             $this->session->flash('error', 'Nội dung không tồn tại');
-            $this->redirect('/websitebatminton/admin/guides');
+            $this->redirect('/admin/guides');
         }
         
         $categories = $this->guideModel->getCategories();
@@ -120,7 +120,7 @@ class GuideController extends AdminBaseController {
      */
     public function update() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/guides');
+            $this->redirect('/admin/guides');
         }
         
         $id = $_POST['id'] ?? 0;
@@ -128,11 +128,11 @@ class GuideController extends AdminBaseController {
         
         if (!$content) {
             $this->session->flash('error', 'Nội dung không tồn tại');
-            $this->redirect('/websitebatminton/admin/guides');
+            $this->redirect('/admin/guides');
         }
         
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/guides/edit?id=' . $id);
+            $this->redirect('/admin/guides/edit?id=' . $id);
         }
         
         $errors = $this->validateContent($_POST);
@@ -140,7 +140,7 @@ class GuideController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/guides/edit?id=' . $id);
+            $this->redirect('/admin/guides/edit?id=' . $id);
         }
         
         $data = [
@@ -157,7 +157,7 @@ class GuideController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi cập nhật: ' . $e->getMessage());
         }
         
-        $this->redirect('/websitebatminton/admin/guides');
+        $this->redirect('/admin/guides');
     }
     
     /**
@@ -165,11 +165,11 @@ class GuideController extends AdminBaseController {
      */
     public function delete() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/guides');
+            $this->redirect('/admin/guides');
         }
         
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/guides');
+            $this->redirect('/admin/guides');
         }
         
         $id = $_POST['id'] ?? 0;
@@ -177,7 +177,7 @@ class GuideController extends AdminBaseController {
         
         if (!$content) {
             $this->session->flash('error', 'Nội dung không tồn tại');
-            $this->redirect('/websitebatminton/admin/guides');
+            $this->redirect('/admin/guides');
         }
         
         try {
@@ -187,7 +187,7 @@ class GuideController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi xóa nội dung');
         }
         
-        $this->redirect('/websitebatminton/admin/guides');
+        $this->redirect('/admin/guides');
     }
     
     // ========================
@@ -243,11 +243,11 @@ class GuideController extends AdminBaseController {
      */
     public function storeCategory() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/guide-categories');
+            $this->redirect('/admin/guide-categories');
         }
         
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/guide-categories/create');
+            $this->redirect('/admin/guide-categories/create');
         }
         
         $errors = $this->validateCategory($_POST);
@@ -255,7 +255,7 @@ class GuideController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/guide-categories/create');
+            $this->redirect('/admin/guide-categories/create');
         }
         
         $data = [
@@ -270,7 +270,7 @@ class GuideController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi thêm danh mục: ' . $e->getMessage());
         }
         
-        $this->redirect('/websitebatminton/admin/guide-categories');
+        $this->redirect('/admin/guide-categories');
     }
     
     /**
@@ -282,7 +282,7 @@ class GuideController extends AdminBaseController {
         
         if (!$category) {
             $this->session->flash('error', 'Danh mục không tồn tại');
-            $this->redirect('/websitebatminton/admin/guide-categories');
+            $this->redirect('/admin/guide-categories');
         }
         
         $data = [
@@ -298,7 +298,7 @@ class GuideController extends AdminBaseController {
      */
     public function updateCategory() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/guide-categories');
+            $this->redirect('/admin/guide-categories');
         }
         
         $id = $_POST['id'] ?? 0;
@@ -306,11 +306,11 @@ class GuideController extends AdminBaseController {
         
         if (!$category) {
             $this->session->flash('error', 'Danh mục không tồn tại');
-            $this->redirect('/websitebatminton/admin/guide-categories');
+            $this->redirect('/admin/guide-categories');
         }
         
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/guide-categories/edit?id=' . $id);
+            $this->redirect('/admin/guide-categories/edit?id=' . $id);
         }
         
         $errors = $this->validateCategory($_POST);
@@ -318,7 +318,7 @@ class GuideController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/guide-categories/edit?id=' . $id);
+            $this->redirect('/admin/guide-categories/edit?id=' . $id);
         }
         
         $data = [
@@ -333,7 +333,7 @@ class GuideController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi cập nhật danh mục: ' . $e->getMessage());
         }
         
-        $this->redirect('/websitebatminton/admin/guide-categories');
+        $this->redirect('/admin/guide-categories');
     }
     
     /**
@@ -341,11 +341,11 @@ class GuideController extends AdminBaseController {
      */
     public function deleteCategory() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/guide-categories');
+            $this->redirect('/admin/guide-categories');
         }
         
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/guide-categories');
+            $this->redirect('/admin/guide-categories');
         }
         
         $id = $_POST['id'] ?? 0;
@@ -353,7 +353,7 @@ class GuideController extends AdminBaseController {
         
         if (!$category) {
             $this->session->flash('error', 'Danh mục không tồn tại');
-            $this->redirect('/websitebatminton/admin/guide-categories');
+            $this->redirect('/admin/guide-categories');
         }
         
         // Check if category has contents
@@ -365,7 +365,7 @@ class GuideController extends AdminBaseController {
         
         if (($result['total'] ?? 0) > 0) {
             $this->session->flash('error', 'Không thể xóa danh mục đang có nội dung');
-            $this->redirect('/websitebatminton/admin/guide-categories');
+            $this->redirect('/admin/guide-categories');
         }
         
         try {
@@ -375,7 +375,7 @@ class GuideController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi xóa danh mục');
         }
         
-        $this->redirect('/websitebatminton/admin/guide-categories');
+        $this->redirect('/admin/guide-categories');
     }
     
     // ========================

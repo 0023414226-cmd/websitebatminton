@@ -10,13 +10,13 @@ require_once ROOT_PATH . '/resources/views/layouts/header.php';
 <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/websitebatminton/assets/images/banner/baner-yonex-astrox-99.jpg" class="d-block w-100" >
+      <img src="/assets/images/banner/baner-yonex-astrox-99.jpg" class="d-block w-100" >
     </div>
     <div class="carousel-item">
-      <img src="/websitebatminton/assets/images/banner/banner1.webp" class="d-block w-100" >
+      <img src="/assets/images/banner/banner1.webp" class="d-block w-100" >
     </div>
     <div class="carousel-item">
-      <img src="/websitebatminton/assets/images/banner/baner-victor-axelsen.webp" class="d-block w-100" >
+      <img src="/assets/images/banner/baner-victor-axelsen.webp" class="d-block w-100" >
   </div>
 </div>
 <!-- ============================================
@@ -95,7 +95,7 @@ require_once ROOT_PATH . '/resources/views/layouts/header.php';
             <?php if (!empty($categories)): ?>
                 <?php foreach ($categories as $index => $category): ?>
                 <div class="col-lg-3 col-md-4 col-sm-6">
-                    <a href="/websitebatminton/products?category=<?php echo $category['id']; ?>" class="category-card">
+                    <a href="/products?category=<?php echo $category['id']; ?>" class="category-card">
                         <!-- Diagonal Label -->
                         <div class="category-label">
                             <span>NEW</span>
@@ -146,9 +146,9 @@ require_once ROOT_PATH . '/resources/views/layouts/header.php';
                         <!-- News Image -->
                         <div class="news-image">
                             <?php if (!empty($post['image'])): ?>
-                            <img src="/websitebatminton/storage/uploads/<?php echo $post['image']; ?>" alt="<?php echo htmlspecialchars($post['title'] ?? 'Tin tức'); ?>">
+                            <img src="/storage/uploads/<?php echo $post['image']; ?>" alt="<?php echo htmlspecialchars($post['title'] ?? 'Tin tức'); ?>">
                             <?php else: ?>
-                            <img src="/websitebatminton/assets/images/news.jpg" alt="News">
+                            <img src="/assets/images/news.jpg" alt="News">
                             <?php endif; ?>
                             <div class="news-category">Tin tức</div>
                         </div>
@@ -161,7 +161,7 @@ require_once ROOT_PATH . '/resources/views/layouts/header.php';
                             </div>
                             <h3 class="news-title"><?php echo htmlspecialchars($post['title'] ?? 'Tiêu đề tin tức'); ?></h3>
                             <p class="news-excerpt"><?php echo htmlspecialchars($post['excerpt'] ?? substr($post['content'] ?? '', 0, 100)); ?>...</p>
-                            <a href="/websitebatminton/news?slug=<?php echo $post['slug'] ?? ''; ?>" class="news-link">
+                            <a href="/news?slug=<?php echo $post['slug'] ?? ''; ?>" class="news-link">
                                 Xem chi tiết <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>

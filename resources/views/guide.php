@@ -4,7 +4,7 @@
     <?php if (!empty($guide)): ?>
         <nav aria-label="breadcrumb" class="mb-3">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/websitebatminton/guide">Hướng dẫn</a></li>
+                <li class="breadcrumb-item"><a href="/guide">Hướng dẫn</a></li>
                 <li class="breadcrumb-item active" aria-current="page"><?= htmlspecialchars($guide['title'] ?? '') ?></li>
             </ol>
         </nav>
@@ -23,13 +23,13 @@
                     <div class="card h-100 shadow-sm">
                         <div class="card-body text-center">
                             <h5 class="card-title fw-bold text-primary">
-                                <a href="/websitebatminton/guide?category=<?= $cat['id'] ?>" class="text-decoration-none">
+                                <a href="/guide?category=<?= $cat['id'] ?>" class="text-decoration-none">
                                     <?= htmlspecialchars($cat['name']) ?>
                                 </a>
                             </h5>
                         </div>
                         <div class="card-footer bg-transparent border-0">
-                            <a href="/websitebatminton/guide?category=<?= $cat['id'] ?>" class="btn btn-outline-primary btn-sm w-100">
+                            <a href="/guide?category=<?= $cat['id'] ?>" class="btn btn-outline-primary btn-sm w-100">
                                 Xem chi tiết
                             </a>
                         </div>

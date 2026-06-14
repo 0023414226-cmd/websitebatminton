@@ -6,7 +6,7 @@
         <div class="col-lg-5">
             <div class="card shadow-sm border-0">
                 <div class="card-body p-0">
-                    <img src="<?= $product['image'] ? '/websitebatminton/storage/uploads/' . htmlspecialchars($product['image']) : '/websitebatminton/assets/images/product.jpg'; ?>" 
+                    <img src="<?= $product['image'] ? '/storage/uploads/' . htmlspecialchars($product['image']) : '/assets/images/product.jpg'; ?>" 
                          alt="<?= htmlspecialchars($product['name']); ?>" 
                          class="img-fluid w-100 rounded" style="object-fit: cover;">
                 </div>
@@ -19,7 +19,7 @@
                     foreach ($extraImages as $img): 
                 ?>
                 <div class="col-3">
-                    <img src="/websitebatminton/storage/uploads/<?= htmlspecialchars($img); ?>" 
+                    <img src="/storage/uploads/<?= htmlspecialchars($img); ?>" 
                          class="img-fluid rounded border" style="object-fit: cover; height: 80px; width: 100%;">
                 </div>
                 <?php endforeach; endif; ?>
@@ -76,7 +76,7 @@
                 <!-- Actions -->
                 <div class="d-flex gap-3 mb-4">
                     <?php if (isset($product['quantity']) && $product['quantity'] > 0): ?>
-                        <a href="/websitebatminton/cart/add?product_id=<?= htmlspecialchars($product['id']); ?>" class="btn btn-primary btn-lg flex-grow-1">
+                        <a href="/cart/add?product_id=<?= htmlspecialchars($product['id']); ?>" class="btn btn-primary btn-lg flex-grow-1">
                             <i class="bi bi-cart-plus me-2"></i>Thêm giỏ hàng
                         </a>
                     <?php else: ?>
@@ -171,14 +171,14 @@
                             <?php endif; ?>
                         </div>
                         <div class="product-image">
-                            <a href="/websitebatminton/products/<?= htmlspecialchars($related['slug']); ?>">
-                                <img src="<?= $related['image'] ? '/websitebatminton/storage/uploads/' . $related['image'] : '/websitebatminton/assets/images/product.jpg'; ?>" 
+                            <a href="/products/<?= htmlspecialchars($related['slug']); ?>">
+                                <img src="<?= $related['image'] ? '/storage/uploads/' . $related['image'] : '/assets/images/product.jpg'; ?>" 
                                      alt="<?= htmlspecialchars($related['name']); ?>" class="img-fluid">
                             </a>
                         </div>
                         <div class="product-info p-3">
                             <h6 class="product-name mb-2">
-                                <a href="/websitebatminton/products/<?= htmlspecialchars($related['slug']); ?>" class="text-decoration-none">
+                                <a href="/products/<?= htmlspecialchars($related['slug']); ?>" class="text-decoration-none">
                                     <?= htmlspecialchars($related['name']); ?>
                                 </a>
                             </h6>
@@ -193,7 +193,7 @@
                             <?php if (isset($related['quantity']) && $related['quantity'] == 0): ?>
                                 <button class="btn btn-primary w-100 disabled opacity-50" disabled>Hết hàng</button>
                             <?php else: ?>
-                                <a href="/websitebatminton/cart/add?product_id=<?= htmlspecialchars($related['id']); ?>" class="btn btn-primary w-100 btn-add-cart">
+                                <a href="/cart/add?product_id=<?= htmlspecialchars($related['id']); ?>" class="btn btn-primary w-100 btn-add-cart">
                                     <i class="bi bi-cart-plus me-1"></i>Thêm giỏ hàng
                                 </a>
                             <?php endif; ?>

@@ -15,7 +15,7 @@
         <div class="col-lg-4">
             <div class="contact-info-card shadow-lg p-5 rounded-4 h-100">
                 <div class="text-center mb-4">
-                    <img src="/websitebatminton/assets/images/logo/JPTachnen.png" alt="JP Sport" style="width: 0 px; height: 96px; border-radius: 16px; object-fit: cover; border: 2px solid #0d6efd; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" />
+                    <img src="/assets/images/logo/JPTachnen.png" alt="JP Sport" style="width: 0 px; height: 96px; border-radius: 16px; object-fit: cover; border: 2px solid #0d6efd; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" />
                     <p class="mt-3 mb-0 fw-semibold">JP SPORT - Hỗ trợ khách hàng</p>
                 </div>
                 <h3 class="text-primary mb-4">Thông tin liên hệ</h3>
@@ -67,7 +67,7 @@
         <div class="col-lg-8">
             <div class="contact-form-card shadow-lg p-5 rounded-4">
                 <h3 class="text-primary mb-4">Gửi tin nhắn</h3>
-                <form method="POST" action="/websitebatminton/contact/send" class="needs-validation" novalidate>
+                <form method="POST" action="/contact/send" class="needs-validation" novalidate>
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="form-floating">

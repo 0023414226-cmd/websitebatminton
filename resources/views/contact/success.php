@@ -8,8 +8,8 @@
             <h1 class="display-4 fw-bold mb-3 text-success">THÀNH CÔNG!</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="/websitebatminton/">Trang chủ</a></li>
-                    <li class="breadcrumb-item"><a href="/websitebatminton/contact">Liên hệ</a></li>
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="/contact">Liên hệ</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Gửi thành công</li>
                 </ol>
             </nav>
@@ -69,11 +69,11 @@
                 
                 <!-- CTA Buttons -->
                 <div class="d-grid gap-3 col-lg-6 mx-auto">
-                    <a href="/websitebatminton/" class="btn btn-primary btn-lg">
+                    <a href="/" class="btn btn-primary btn-lg">
                         <i class="bi bi-house-door me-2"></i>
                         Về trang chủ
                     </a>
-                    <a href="/websitebatminton/contact" class="btn btn-outline-primary btn-lg">
+                    <a href="/contact" class="btn btn-outline-primary btn-lg">
                         <i class="bi bi-chat-square-text me-2"></i>
                         Gửi thêm tin nhắn
                     </a>

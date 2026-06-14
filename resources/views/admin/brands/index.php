@@ -6,7 +6,7 @@
                 <h5 class="mb-0"><i class="fas fa-industry me-2"></i>Quản lý hãng</h5>
             </div>
             <div class="col-md-6 text-end">
-                <a href="/websitebatminton/admin/brands/create" class="btn btn-primary">
+                <a href="/admin/brands/create" class="btn btn-primary">
                     <i class="fas fa-plus"></i> Thêm hãng
                 </a>
             </div>
@@ -16,7 +16,7 @@
     <div class="card-body">
         <div class="row mb-4">
             <div class="col-md-6">
-                <form method="GET" action="/websitebatminton/admin/brands" class="d-flex gap-2">
+                <form method="GET" action="/admin/brands" class="d-flex gap-2">
                     <input type="text" name="search" class="form-control" placeholder="Tìm kiếm hãng..." 
                            value="<?php echo $search ?? ''; ?>">
                     <button type="submit" class="btn btn-outline-primary">
@@ -50,11 +50,11 @@
                                 </span>
                             </td>
                             <td>
-                                <a href="/websitebatminton/admin/brands/edit?id=<?php echo $brand['id']; ?>" 
+                                <a href="/admin/brands/edit?id=<?php echo $brand['id']; ?>" 
                                    class="btn btn-sm btn-outline-primary" title="Sửa">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <form method="POST" action="/websitebatminton/admin/brands/delete" 
+                                <form method="POST" action="/admin/brands/delete" 
                                       class="d-inline" onsubmit="return confirmDelete();">
                                     <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                                     <input type="hidden" name="id" value="<?php echo $brand['id']; ?>">

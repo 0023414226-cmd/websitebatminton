@@ -212,7 +212,7 @@
         }
 
         // Create order via AJAX
-        fetch('/websitebatminton/api/create-order', {
+        fetch('/api/create-order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -223,9 +223,9 @@
         .then(data => {
             if (data.success) {
                 // Clear cart and redirect to success page
-                fetch('/websitebatminton/api/clear-cart', { method: 'POST' })
+                fetch('/api/clear-cart', { method: 'POST' })
                     .then(() => {
-                        window.location.href = '/websitebatminton/order/' + data.order_id;
+                        window.location.href = '/order/' + data.order_id;
                     });
             } else {
                 alert('Lỗi: ' + data.message);

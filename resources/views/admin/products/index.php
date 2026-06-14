@@ -6,7 +6,7 @@
                 <h5 class="mb-0"><i class="fas fa-box me-2"></i>Quản lý sản phẩm</h5>
             </div>
             <div class="col-md-6 text-end">
-                <a href="/websitebatminton/admin/products/create" class="btn btn-primary">
+                <a href="/admin/products/create" class="btn btn-primary">
                     <i class="fas fa-plus"></i> Thêm sản phẩm
                 </a>
             </div>
@@ -17,7 +17,7 @@
         <!-- Search and Filter -->
         <div class="row mb-4">
             <div class="col-md-8">
-                <form method="GET" action="/websitebatminton/admin/products" class="d-flex gap-2">
+                <form method="GET" action="/admin/products" class="d-flex gap-2">
                     <input type="text" name="search" class="form-control" placeholder="Tìm kiếm sản phẩm..." 
                            value="<?php echo $search ?? ''; ?>">
                     <select name="category" class="form-select" style="width: 200px;">
@@ -61,12 +61,12 @@
                             <td><?php echo $product['id']; ?></td>
                             <td>
                                 <?php if ($product['image']): ?>
-                                <img src="/websitebatminton/storage/uploads/<?php echo $product['image']; ?>" 
+                                <img src="/storage/uploads/<?php echo $product['image']; ?>" 
                                      alt="<?php echo $product['name']; ?>" 
                                      style="width: 50px; height: 50px; object-fit: cover;" 
                                      class="rounded">
                                 <?php else: ?>
-                                <img src="/websitebatminton/assets/images/no-image.jpg" 
+                                <img src="/assets/images/no-image.jpg" 
                                      alt="No Image" 
                                      style="width: 50px; height: 50px; object-fit: cover;" 
                                      class="rounded">
@@ -102,11 +102,11 @@
                                 </span>
                             </td>
                             <td>
-                                <a href="/websitebatminton/admin/products/edit?id=<?php echo $product['id']; ?>" 
+                                <a href="/admin/products/edit?id=<?php echo $product['id']; ?>" 
                                    class="btn btn-sm btn-outline-primary" title="Sửa">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <form method="POST" action="/websitebatminton/admin/products/delete" 
+                                <form method="POST" action="/admin/products/delete" 
                                       class="d-inline" onsubmit="return confirmDelete();">
                                     <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                                     <input type="hidden" name="id" value="<?php echo $product['id']; ?>">

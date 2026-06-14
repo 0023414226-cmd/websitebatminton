@@ -66,12 +66,12 @@ class CategoryController extends AdminBaseController {
      */
     public function store() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/categories');
+            $this->redirect('/admin/categories');
         }
         
         // Validate CSRF
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/categories/create');
+            $this->redirect('/admin/categories/create');
         }
         
         // Validate input
@@ -81,7 +81,7 @@ class CategoryController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/categories/create');
+            $this->redirect('/admin/categories/create');
         }
         
         // Prepare data
@@ -100,7 +100,7 @@ class CategoryController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi thêm danh mục: ' . $e->getMessage());
         }
         
-        $this->redirect('/websitebatminton/admin/categories');
+        $this->redirect('/admin/categories');
     }
     
     /**
@@ -113,7 +113,7 @@ class CategoryController extends AdminBaseController {
         
         if (!$category) {
             $this->session->flash('error', 'Danh mục không tồn tại');
-            $this->redirect('/websitebatminton/admin/categories');
+            $this->redirect('/admin/categories');
         }
         
         $data = [
@@ -129,21 +129,21 @@ class CategoryController extends AdminBaseController {
      */
     public function update() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/categories');
+            $this->redirect('/admin/categories');
         }
         
         $id = $_POST['id'] ?? 0;
         
         // Validate CSRF
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/categories/edit?id=' . $id);
+            $this->redirect('/admin/categories/edit?id=' . $id);
         }
         
         $category = $this->categoryModel->find($id);
         
         if (!$category) {
             $this->session->flash('error', 'Danh mục không tồn tại');
-            $this->redirect('/websitebatminton/admin/categories');
+            $this->redirect('/admin/categories');
         }
         
         // Validate input
@@ -153,7 +153,7 @@ class CategoryController extends AdminBaseController {
             foreach ($errors as $error) {
                 $this->session->flash('error', $error);
             }
-            $this->redirect('/websitebatminton/admin/categories/edit?id=' . $id);
+            $this->redirect('/admin/categories/edit?id=' . $id);
         }
         
         // Prepare data
@@ -172,7 +172,7 @@ class CategoryController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi cập nhật danh mục: ' . $e->getMessage());
         }
         
-        $this->redirect('/websitebatminton/admin/categories');
+        $this->redirect('/admin/categories');
     }
     
     /**
@@ -180,12 +180,12 @@ class CategoryController extends AdminBaseController {
      */
     public function delete() {
         if (!$this->isPost()) {
-            $this->redirect('/websitebatminton/admin/categories');
+            $this->redirect('/admin/categories');
         }
         
         // Validate CSRF
         if (!$this->validateCsrf()) {
-            $this->redirect('/websitebatminton/admin/categories');
+            $this->redirect('/admin/categories');
         }
         
         $id = $_POST['id'] ?? 0;
@@ -194,7 +194,7 @@ class CategoryController extends AdminBaseController {
         
         if (!$category) {
             $this->session->flash('error', 'Danh mục không tồn tại');
-            $this->redirect('/websitebatminton/admin/categories');
+            $this->redirect('/admin/categories');
         }
         
         // Check if category has products
@@ -202,7 +202,7 @@ class CategoryController extends AdminBaseController {
         
         if ($productCount > 0) {
             $this->session->flash('error', 'Không thể xóa danh mục đang có sản phẩm');
-            $this->redirect('/websitebatminton/admin/categories');
+            $this->redirect('/admin/categories');
         }
         
         try {
@@ -212,7 +212,7 @@ class CategoryController extends AdminBaseController {
             $this->session->flash('error', 'Lỗi khi xóa danh mục');
         }
         
-        $this->redirect('/websitebatminton/admin/categories');
+        $this->redirect('/admin/categories');
     }
     
     /**

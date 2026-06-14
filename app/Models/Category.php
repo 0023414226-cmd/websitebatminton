@@ -26,9 +26,9 @@ class Category extends Model {
      * @return array
      */
     public function getCategoriesWithBrands() {
-        $sql = "SELECT c.id AS category_id, c.name AS category_name, b.id AS brand_id, b.name AS brand_name " .
+        $sql = "SELECT c.id AS category_id, c.name AS category_name " .
                "FROM {$this->table} c " .
-               "LEFT JOIN brands b ON b.category_id = c.id AND b.status = 'active' " .
+               "" .
                "WHERE c.status = 'active' " .
                "ORDER BY c.name ASC, b.name ASC";
 
