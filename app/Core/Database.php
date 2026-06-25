@@ -17,14 +17,14 @@ class Database {
             PDO::ATTR_EMULATE_PREPARES => false,
             PDO::ATTR_PERSISTENT => false,
             PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
-            PDO::MYSQL_ATTR_SSL_CA => "/etc/ssl/certs/ca-certificates.crt",
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci",
         ];
         
         try {
             $this->pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
         } catch (PDOException $e) {
-            die("PDO Error: " . $e->getMessage());
+            error_log("Database Connection Error: " . $e->getMessage());
+            throw new Exception("Database connection failed. Please check configuration.");
         }
     }
     
