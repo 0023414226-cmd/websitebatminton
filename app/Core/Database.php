@@ -17,15 +17,16 @@ class Database {
             PDO::ATTR_EMULATE_PREPARES => false,
             PDO::ATTR_PERSISTENT => false,
             PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
+            PDO::MYSQL_ATTR_SSL_CA => "/etc/ssl/certs/ca-certificates.crt",
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci",
         ];
         
         try {
             $this->pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
-           catch (PDOException $e) {
+        } catch (PDOException $e) {
             die("PDO Error: " . $e->getMessage());
         }
-            }
+    }
     
     /**
      * Get Singleton Instance
@@ -51,16 +52,14 @@ class Database {
      * @return PDOStatement
      */
     public function query($sql, $params = []) {
-
-    $stmt = $this->pdo->prepare($sql);
+        $stmt = $this->pdo->prepare($sql);
 
         if (!$stmt->execute($params)) {
-            print_r($stmt->errorInfo()); // 👈 thêm dòng này
+            print_r($stmt->errorInfo());
             throw new Exception("Query execution failed");
         }
 
         return $stmt;
-
     }
     
     /**
@@ -123,4 +122,3 @@ class Database {
         throw new Exception("Cannot unserialize singleton");
     }
 }
-
