@@ -1,18 +1,17 @@
 FROM php:8.2-apache
 
 RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
-
 RUN docker-php-ext-install pdo pdo_mysql mysqli
-
 RUN a2enmod rewrite
 
 COPY . /var/www/html
 
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
-
 RUN ln -s /var/www/html/assets /var/www/html/public/assets \
     && ln -s /var/www/html/storage /var/www/html/public/storage
 
-WORKDIR /var/www/html
 
+RUN echo "PassEnv DB_HOST DB_NAME DB_USER DB_PASS" >> /etc/apache2/apache2.conf
+
+WORKDIR /var/www/html
 EXPOSE 80
